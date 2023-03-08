@@ -1,0 +1,53 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.header {
+    height: 81px;
+    border-bottom: 1px solid $dark-border;
+    
+    .container {
+        height: 100%;
+        @include flex(space-between);
+    }
+
+    &__nav {
+        display: flex;
+        height: 100%;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__link {
+        height: 100%;
+        padding: 20px 5px;
+        font-size: 16px;
+        border-bottom: 3px solid transparent;
+        transition: color .15s ease-in-out,
+            background-color .15s ease-in-out,
+            border-color .15s ease-in-out;
+        @include flex();
+
+        &:hover {
+            color: $orange;
+            border-bottom: 3px solid $orange;
+        }
+    }
+
+    &__button {
+        height: 55px;
+        position: relative;
+        padding-left: 66px;
+
+        &::before {
+            content: url('~assets/icons/steam.svg');
+            scale: 1.5;
+            left: 36px;
+            top: 20px;
+            position: absolute;
+        }
+    }
+}

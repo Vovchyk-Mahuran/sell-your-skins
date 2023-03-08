@@ -1,0 +1,6 @@
+@use '/src/styles/mixins/classes.scss' as *;
+
+.payment-systems__container {
+    width: 100%;
+    @include flex(space-between);
+}
