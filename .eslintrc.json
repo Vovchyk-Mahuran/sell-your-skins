@@ -70,7 +70,10 @@
 		"react/react-in-jsx-scope": "off",
 		"no-undef": "off",
 		"no-param-reassign": 0,
-		"no-extra-boolean-cast": [0, { "enforceForLogicalOperands": true }]
+		"no-extra-boolean-cast": [0, { "enforceForLogicalOperands": true }],
+		"react/function-component-definition": [
+			2, {"namedComponents": ["arrow-function", "function-declaration"],"unnamedComponents": "arrow-function"}
+		]
     },
     "settings": {
 		"import/resolver": {
