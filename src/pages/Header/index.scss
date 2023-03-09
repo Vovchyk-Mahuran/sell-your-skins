@@ -29,7 +29,7 @@
         transition: color .15s ease-in-out,
             background-color .15s ease-in-out,
             border-color .15s ease-in-out;
-        @include flex();
+        @include flex;
 
         &:hover {
             color: $orange;

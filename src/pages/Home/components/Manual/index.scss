@@ -1,0 +1,12 @@
+@use '/src/styles/variables.scss' as *;
+
+.manual {
+    padding-top: 135px;
+    background: $secondary-background;
+
+    &__title {
+        font-size: 32px;
+        margin-bottom: 50px;
+        font-weight: 600;
+    }
+}

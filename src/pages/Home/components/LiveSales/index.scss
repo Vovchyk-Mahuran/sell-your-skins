@@ -1,0 +1,21 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.live-sales {
+    background: $dark-gradient;
+    border-bottom: 1px solid $dark-border;
+
+    &__title {
+        font-size: 24px;
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__skins-list {
+        @include flex(flex-start);
+        gap: 15px;
+        position: relative;
+        z-index: 1;
+    }
+}

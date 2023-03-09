@@ -12,4 +12,10 @@
         padding: 48px 0;
         border-bottom: 1px solid $dark-border;
     }
+
+    &__live-sales {
+        background: $secondary-background;
+        position: relative;
+        padding: 35px 0;
+    }
 }
