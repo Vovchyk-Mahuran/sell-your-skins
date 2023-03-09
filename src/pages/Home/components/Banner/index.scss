@@ -1,0 +1,77 @@
+@use '/src/styles/mixins/classes.scss' as *;
+@use '/src/styles/variables.scss' as *;
+
+.banner {
+    padding: 26px 0;
+    border-bottom: 1px solid $dark-border;
+
+    &__container {
+        @include flex(space-between);
+    }
+
+    &__info {
+        width: 50%;
+        flex: 0 0 auto;
+    }
+    
+    &__title {
+        font-weight: 600;
+        font-size: 54px;
+        line-height: 1.2;
+        max-width: 500px;
+
+        .marked {
+            line-height: 1.2;
+        }
+    }
+
+    &__description {
+        font-size: 20px;
+        padding: 32px 0;
+    }
+
+    &__buttons {
+        @include flex(flex-start);
+        max-width: 500px;
+        gap: 36px;
+        font-weight: 700;
+
+        .button {
+            &__separator {
+                color: $gray;
+                margin-right: 10px;
+            }
+
+            &__watch {
+                @include flex(flex-start);
+                gap: 30px;
+
+                &--play {
+                    background-color: $orange;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    @include flex();
+                    cursor: pointer;
+                    transition: transform 0.6s ease-in-out;
+                    border: 0;
+
+                    &::before {
+                        content: '';
+                        width: 76px;
+                        height: 76px;
+                        border-radius: 50%;
+                        border: 1px solid $orange;
+                        position: absolute;
+                        background: transparent;
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    
+}

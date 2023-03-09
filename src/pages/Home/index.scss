@@ -1,0 +1,15 @@
+@use '/src/styles/variables.scss' as *;
+
+.home {
+    &__banner-section {
+        background-image: url('~assets/img/index-header.webp');
+        background-position: center;
+        background-size: cover;
+    }
+    
+    &__payment-systems {
+        display: flex;
+        padding: 48px 0;
+        border-bottom: 1px solid $dark-border;
+    }
+}
