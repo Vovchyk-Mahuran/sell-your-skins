@@ -4,9 +4,11 @@ import { FC } from 'react';
 import Header from 'pages/Header';
 import Banner from './components/Banner';
 import PaymentSystems from './components/PaymentSystems';
+import Manual from './components/Manual';
 
 // Styles
 import './index.scss';
+import LiveSales from './components/LiveSales';
 
 const Home: FC = () => (
 	<div className="home">
@@ -17,6 +19,12 @@ const Home: FC = () => (
 		<section className="home__payment-systems">
 			<PaymentSystems />
 		</section>
+
+		<section className="home__live-sales live-sales">
+			<LiveSales />
+		</section>
+
+		<Manual />
 		<div />
 	</div>
 );
