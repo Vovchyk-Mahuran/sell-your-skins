@@ -1,0 +1,33 @@
+@use '/src/styles/variables.scss' as *;
+
+.accordion {
+    &__button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 16px;
+        text-align: left;
+        border: 1px solid $dark-border;
+        border-radius: 0;
+        background-color: $skin-background;
+        overflow-anchor: none;
+        margin-bottom: 15px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    
+    &__body {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        
+        &.collapsed {
+            height: auto;
+            padding: 16px 20px;
+            max-height: 1000px;
+        }
+    }
+}

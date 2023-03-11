@@ -9,7 +9,7 @@ import SkinCard from '../SkinCard';
 const SkinsCardList: FC = () => (
 	<div className="live-sales__skins-list skins__list">
 		{mockSales.map(skin => (
-			<SkinCard skin={skin} />
+			<SkinCard key={skin.id} skin={skin} />
 		))}
 	</div>
 );

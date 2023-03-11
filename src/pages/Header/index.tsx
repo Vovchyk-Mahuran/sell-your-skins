@@ -24,7 +24,7 @@ const Header: FC = () => (
 			<nav className="header__nav">
 				<ul className="header__list">
 					{HEADER_LINKS.map(item => (
-						<HeaderItem key={item.link} item={item} />
+						<HeaderItem key={item.href} item={item} />
 					))}
 					<Button classes="header__button" btnText="Sign in with steam" />
 				</ul>

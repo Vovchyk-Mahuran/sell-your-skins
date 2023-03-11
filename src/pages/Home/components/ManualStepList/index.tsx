@@ -10,7 +10,7 @@ interface ManualStepListProps {
 const ManualStepList: FC<ManualStepListProps> = ({ items }) => (
 	<ul className="step__list step-list">
 		{items.map(item => (
-			<ManualStepListItem item={item} />
+			<ManualStepListItem key={item} item={item} />
 		))}
 	</ul>
 );
