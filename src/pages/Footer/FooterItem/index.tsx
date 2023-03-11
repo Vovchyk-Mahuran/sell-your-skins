@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 // Types
 import { HeaderLink } from 'core/types/header-link.type';
 
-interface HeaderItemProps {
+interface FooterLinkProps {
 	item: HeaderLink;
 }
 
-const HeaderItem: FC<HeaderItemProps> = ({ item }) => (
-	<Link to={item.href} className="header__link">
+const FooterLink: FC<FooterLinkProps> = ({ item }) => (
+	<Link className="footer__link" to={item.href}>
 		{item.title}
 	</Link>
 );
 
-export default HeaderItem;
+export default FooterLink;
