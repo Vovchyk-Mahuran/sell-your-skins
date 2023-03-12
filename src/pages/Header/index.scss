@@ -49,5 +49,9 @@
             top: 20px;
             position: absolute;
         }
+
+        &--mobile {
+            display: none;
+        }
     }
 }

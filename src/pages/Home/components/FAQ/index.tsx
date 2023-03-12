@@ -8,6 +8,7 @@ import Accordion from 'shared/components/Accordion';
 
 // Styles
 import './index.scss';
+import './index.media.scss';
 
 const FAQ: FC = () => {
 	const [selectedId, setSelectedId] = useState<string>('');

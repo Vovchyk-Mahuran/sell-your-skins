@@ -5,6 +5,7 @@ import Button from 'shared/components/Button';
 
 // Styles
 import './index.scss';
+import './index.media.scss';
 
 const TrustPilot: FC = () => (
 	<section className="trust-pilot">

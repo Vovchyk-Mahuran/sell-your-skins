@@ -10,6 +10,7 @@ import ManualStepList from '../ManualStepList';
 
 // Styles
 import './index.scss';
+import './index.media.scss';
 
 interface ManualStepProps {
 	step: Step;

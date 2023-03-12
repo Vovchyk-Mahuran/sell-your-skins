@@ -1,0 +1,29 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet-lg {
+    .faq {
+        &__title, &__description {
+            width: 74%;
+        }
+    }
+}
+
+@include tablet {
+    .faq {
+        &__title, &__description {
+            width: 100%;
+        }
+    }
+}
+
+@include mobile-xl {
+    .faq {
+        &__title{
+            font-size: 28px;
+        }
+
+        &__description {
+            font-size: 16px;
+        }
+    }
+}

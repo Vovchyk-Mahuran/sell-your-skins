@@ -8,6 +8,7 @@ import ManualStep from '../ManualStep';
 
 // Styles
 import './index.scss';
+import './index.media.scss';
 
 const Manual: FC = () => (
 	<section className="manual">

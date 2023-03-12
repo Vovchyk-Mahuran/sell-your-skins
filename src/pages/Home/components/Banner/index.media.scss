@@ -1,0 +1,70 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include laptop-md {
+    .banner {
+        &__img {
+            max-width: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include laptop-sm {
+    .banner {
+        padding: 85px 0;
+
+        &__title {
+            font-size: 38px;
+            line-height: 1.5;
+        }
+
+        &__description {
+            font-size: 18px;
+        }
+
+        &__buttons {
+            gap: 25px;
+        }
+    }
+}
+
+@include tablet-lg {
+    .banner {
+        &__info {
+            width: 100%;
+            flex:none;
+        }
+        &__img {
+            display: none;
+        }
+    
+    }
+}
+
+@include tablet-sm {
+    .banner {
+        &__title {
+            font-size: 33px;
+        }
+
+        &__description {
+            font-size: 15px;
+        }
+
+        &__buttons {
+            max-width: 100%;
+
+            .button__watch, .button__separator {
+                display: none;
+            }
+        }
+
+        .button {
+            width: 100%;
+        }
+
+    }
+}

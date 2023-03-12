@@ -1,0 +1,31 @@
+@use './mixins/media.scss' as *;
+
+@include laptop-md {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@include laptop-sm {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@include tablet-lg {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@include tablet {
+    .container {
+        max-width: 600px;
+    }
+}
+
+@include tablet-sm {
+    .container {
+        width: 100%;
+    }
+}

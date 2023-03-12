@@ -7,16 +7,18 @@ import { FOOTER_LINKS } from 'constants/footerLinks';
 import Logo from 'assets/icons/logo.svg';
 
 // Components
-import FooterColumn from './FooterColumn';
+import FooterColumn from './components/FooterColumn';
+import FooterColumnMobile from './components/FooterColumnMobile';
 
 // Styles
 import './index.scss';
+import './index.media.scss';
 
 const Footer: FC = () => (
 	<footer className="footer">
 		<div className="container">
 			<div className="footer__links">
-				<div className="footer__column">
+				<div className="footer__column footer__column--info">
 					<img src={Logo} alt="Logo" className="footer__logo" />
 					<p className="footer__description">
 						Crafted with passion by CS:GO enthusiasts and members of the community, SellYourSkins enables
@@ -24,7 +26,10 @@ const Footer: FC = () => (
 					</p>
 				</div>
 				{FOOTER_LINKS.map(column => (
-					<FooterColumn column={column} />
+					<FooterColumn key={column.title} column={column} />
+				))}
+				{FOOTER_LINKS.map(column => (
+					<FooterColumnMobile key={column.title} column={column} />
 				))}
 			</div>
 			<p className="footer__copyright">
