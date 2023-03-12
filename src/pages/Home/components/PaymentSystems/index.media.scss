@@ -1,0 +1,25 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include laptop-sm {
+    .payment-systems__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .payment-system {
+        display: flex;
+        justify-self: center;
+    }
+}
+
+@include mobile-xl {
+    .payment-systems__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include mobile-sm {
+    .payment-systems__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

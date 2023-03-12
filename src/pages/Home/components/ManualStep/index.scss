@@ -54,10 +54,11 @@
         &__item {
             @include flex(flex-start);
             gap: 15px;
-            line-height: 40px;
+            padding: 12px 0;
 
             img {
                 width: 24px;
+                height: 24px;
             }
         }
     }

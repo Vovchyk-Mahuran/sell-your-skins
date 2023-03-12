@@ -10,15 +10,16 @@ import Logo from 'assets/icons/logo.svg';
 
 // Components
 import Button from 'shared/components/Button';
-import HeaderItem from './HeaderItem';
+import HeaderItem from './components/HeaderItem';
 
 // Styles
 import './index.scss';
+import './index.media.scss';
 
 const Header: FC = () => (
 	<div className="header">
 		<div className="container">
-			<Link to={ROUTERS.HOME}>
+			<Link className="header__logo" to={ROUTERS.HOME}>
 				<img src={Logo} alt="SELL YOUR SKINS" />
 			</Link>
 			<nav className="header__nav">
@@ -26,7 +27,8 @@ const Header: FC = () => (
 					{HEADER_LINKS.map(item => (
 						<HeaderItem key={item.href} item={item} />
 					))}
-					<Button classes="header__button" btnText="Sign in with steam" />
+					<Button classes="header__button header__button--desktop" btnText="Sign in with steam" />
+					<Button classes="header__button header__button--mobile" btnText="Sign in" />
 				</ul>
 			</nav>
 		</div>

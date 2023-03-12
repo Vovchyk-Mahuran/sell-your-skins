@@ -24,7 +24,6 @@ export const FOOTER_LINKS: FooterColumn[] = [
 		items: [
 			{ title: 'How to Sell Skins?', href: '/' },
 			{ title: 'How to Set Up Your Account?', href: '/' },
-			{ title: 'Bonus System', href: '/' },
 			{ title: 'How to Find Your Trade URL?', href: '/' },
 			{ title: 'Watch More Tutorials', href: '/' },
 		],

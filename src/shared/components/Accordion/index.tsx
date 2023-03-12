@@ -1,6 +1,9 @@
 import { FC, useRef, ReactNode, useEffect } from 'react';
 import cx from 'classnames';
 
+// Images
+import Arrow from 'assets/icons/arrow.svg';
+
 // Styles
 import './index.scss';
 
@@ -10,11 +13,23 @@ interface AccordionProps {
 	content?: string;
 	children?: ReactNode;
 	isOpen?: boolean;
-	id: string;
-	toggleSelected: (id: string) => void;
+	setIsOpen?: (value: boolean) => void;
+	id?: string;
+	toggleSelected?: (id: string) => void;
+	withArrow?: boolean;
 }
 
-const Accordion: FC<AccordionProps> = ({ classes, title, content, children, id, isOpen = false, toggleSelected }) => {
+const Accordion: FC<AccordionProps> = ({
+	classes,
+	title,
+	content,
+	children,
+	id,
+	isOpen = false,
+	setIsOpen,
+	toggleSelected,
+	withArrow = false,
+}) => {
 	const accordionContentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -23,16 +38,26 @@ const Accordion: FC<AccordionProps> = ({ classes, title, content, children, id, 
 		}
 	}, []);
 
+	const handleClick = (id?: string) => {
+		if (id) return toggleSelected?.(id);
+		return setIsOpen?.(!isOpen);
+	};
+
 	return (
 		<div className={cx('accordion', classes)}>
 			<h2 className="accordion__header">
 				<button
-					onClick={() => toggleSelected(id)}
+					onClick={() => handleClick(id)}
 					className={cx('accordion__button', { collapsed: isOpen })}
 					type="button"
 				>
 					{title}
 				</button>
+				{withArrow && (
+					<button type="button" className={cx('accordion__arrow', { collapsed: isOpen })}>
+						<img src={Arrow} alt="Arrow" />
+					</button>
+				)}
 			</h2>
 			<div ref={accordionContentRef} className={cx('accordion__body', { collapsed: isOpen })}>
 				{children}

@@ -1,0 +1,54 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet-lg {
+    .header {
+        &__link {
+            display: none;
+        }
+
+        &__button--desktop {
+            display: none;
+        }
+
+        &__button--mobile {
+            display: flex;
+        }
+
+        &__button {
+            height: 48px;
+
+            &::before {
+                top: 18px;
+            }
+        }
+    }
+}
+
+@include tablet-sm {
+    .header {
+        &__button {
+            font-size: 12px;
+            padding-left: 40px;
+            padding-right: 21px;
+
+            &::before {
+                scale: 1.2;
+                left: 10px;
+                top: 17px;
+                left: 13px;
+            }
+        }
+    }
+}
+
+@include mobile-sm {
+    .header {
+        &__logo {
+            max-width: 60%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

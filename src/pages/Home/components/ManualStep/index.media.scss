@@ -1,0 +1,101 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include laptop-sm {
+    .step{
+        &.step--2 {
+            .step__img {
+                max-width: 50%;
+    
+                img {
+                    width: 100%;
+                }
+            }
+    
+        }
+    
+        &.step--4 {
+            .step__img {
+                max-width: 50%;
+    
+                img {
+                    width: 100%;
+                }
+            }
+    
+        } 
+    }
+}
+
+@include tablet-lg {
+    .step {
+        .container {
+            flex-direction: column;
+            padding: 30px 0;
+
+            &.reverse {
+                flex-direction: column;
+                padding: 30px 0;
+            }
+        }
+
+        &.step--1 {
+            padding-bottom: 30px;
+
+            .step__description {
+                max-width: 100%;
+            }
+        }
+
+        &.step--3 {
+            padding: 30px 0;
+
+            .step__description {
+                max-width: 100%;
+            }
+        }
+
+        &__img {
+            max-width: 90%;
+        }
+
+        &.step--2 {
+            .step__img {
+                max-width: 90%;
+            }
+
+            .step__info {
+                margin: 0;
+            }
+        }
+
+        &.step--4 {
+            .step__info {
+                margin: 0;
+            }
+
+            .step__img {
+                max-width: 90%;
+            }
+        }
+
+        &__info {
+            padding: 15px;
+
+            .button {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@include mobile-xl {
+    .step {
+        &__title {
+            font-size: 26px;
+        }
+
+        &__description {
+            font-size: 16px;
+        }
+    }
+}

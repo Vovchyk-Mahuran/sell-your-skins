@@ -1,0 +1,18 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include mobile-xl {
+    .trust-pilot {
+        .container {
+            padding: 0;
+        }
+
+        &__title {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        &__banner {
+            padding: 46px 23px;
+        }
+    }
+}

@@ -9,6 +9,7 @@ import Button from 'shared/components/Button';
 
 // Styles
 import './index.scss';
+import './index.media.scss';
 
 const Banner: FC = () => (
 	<div className="banner">
