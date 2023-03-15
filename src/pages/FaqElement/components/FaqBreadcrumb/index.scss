@@ -1,0 +1,31 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.faq-breadcrumb {
+    list-style-type: none;
+    @include flex(flex-start);
+    gap: 10px;
+    font-size: 16px;
+
+    &__category {
+        white-space: nowrap;
+    }
+
+    &__title {
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 60%;
+
+        a, a:active, a:visited, a:focus, a:hover {
+            color: $orange;
+            font-weight: 500;
+            width: 100%;
+        }
+    }
+
+    &__separator {
+        transform: rotate(-90deg) scale(0.8);
+    }
+}

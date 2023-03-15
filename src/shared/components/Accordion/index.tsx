@@ -1,5 +1,6 @@
 import { FC, useRef, ReactNode, useEffect } from 'react';
 import cx from 'classnames';
+import SVG from 'react-inlinesvg';
 
 // Images
 import Arrow from 'assets/icons/arrow.svg';
@@ -17,6 +18,7 @@ interface AccordionProps {
 	id?: string;
 	toggleSelected?: (id: string) => void;
 	withArrow?: boolean;
+	headerIcon?: string;
 }
 
 const Accordion: FC<AccordionProps> = ({
@@ -29,6 +31,7 @@ const Accordion: FC<AccordionProps> = ({
 	setIsOpen,
 	toggleSelected,
 	withArrow = false,
+	headerIcon,
 }) => {
 	const accordionContentRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +54,13 @@ const Accordion: FC<AccordionProps> = ({
 					className={cx('accordion__button', { collapsed: isOpen })}
 					type="button"
 				>
-					{title}
+					{headerIcon ? (
+						<>
+							<SVG src={headerIcon} /> {title}
+						</>
+					) : (
+						title
+					)}
 				</button>
 				{withArrow && (
 					<button type="button" className={cx('accordion__arrow', { collapsed: isOpen })}>

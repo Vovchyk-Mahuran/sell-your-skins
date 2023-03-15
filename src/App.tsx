@@ -8,6 +8,8 @@ import HomePage from 'pages/Home';
 import AboutUsPage from 'pages/AboutUs';
 import HelpPage from 'pages/Help';
 import HowToSellPage from 'pages/HowToSellSkins';
+import Faq from 'pages/FAQ';
+import FaqElement from 'pages/FaqElement';
 
 function App() {
 	return (
@@ -17,6 +19,8 @@ function App() {
 				<Route path={ROUTERS.HOW_TO_SELL_SKINS} element={<HowToSellPage />} />
 				<Route path={ROUTERS.ABOUT_US} element={<AboutUsPage />} />
 				<Route path={ROUTERS.HELP} element={<HelpPage />} />
+				<Route path={ROUTERS.FAQ} element={<Faq />} />
+				<Route path={ROUTERS.FAQ_ID} element={<FaqElement />} />
 				<Route path={ROUTERS.NOT_FOUND} element={<Navigate to={ROUTERS.HOME} />} />
 			</Routes>
 		</div>

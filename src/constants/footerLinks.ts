@@ -8,7 +8,7 @@ export const FOOTER_LINKS: FooterColumn[] = [
 			{ title: 'About Us', href: '/' },
 			{ title: 'Bonus System', href: '/' },
 			{ title: 'Blog', href: '/' },
-			{ title: 'FAQ', href: '/' },
+			{ title: 'FAQ', href: '/faq' },
 		],
 	},
 	{

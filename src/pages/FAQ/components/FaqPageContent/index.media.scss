@@ -1,0 +1,41 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+
+@include laptop-sm {
+    .faq-page {
+        &__cards {
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: normal;
+        }
+
+        .faq-card {
+            width: 45%;
+        }
+    }
+}
+
+@include tablet-lg {
+    .faq-page {
+        &__content.container {
+            max-width: 100%;
+        }
+    }
+}
+
+@include tablet {
+    .faq-page {
+        .faq-card {
+            width: 70%;
+            align-items: center;
+        }
+    }
+}
+
+@include tablet-sm {
+    .faq-page {
+        .faq-card {
+            width: 100%;
+        }
+    }
+}
