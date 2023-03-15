@@ -1,0 +1,36 @@
+@use '/src/styles/variables.scss' as *;
+
+.faq-element {
+    &__details {
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 1fr 3fr;
+        gap: 30px;
+    }
+
+    &__accordion {
+        .accordion__button {
+            margin-bottom: 0;
+            font-size: 14px;
+            background: $faq-gradient;
+            background-color: $skin-background;
+
+            &:hover {
+                background: linear-gradient(90deg, rgba(247, 143, 31, 0.16) 5%, rgba(18, 25, 45, 0.99) 99.96%);
+
+                svg {
+                    fill: $orange;
+                }
+            }
+        }
+
+        .accordion__body {
+            background: $skin-background;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+    }
+}

@@ -1,0 +1,15 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet-lg {
+    .faq-active {
+        margin-bottom: 0;
+    
+        &__title {
+            font-size: 22px;
+        }
+    
+        &__description p {
+            font-size: 15px;
+        }
+    }
+}

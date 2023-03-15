@@ -10,7 +10,7 @@
     
     &__arrow {
         position: absolute;
-        top: 27%;
+        top: 36%;
         right: 6%;
         border: 0;
         background: transparent;
@@ -38,6 +38,13 @@
         margin-bottom: 15px;
         line-height: 40px;
         cursor: pointer;
+
+        svg {
+            fill: $white;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
     }
     
     &__body {
