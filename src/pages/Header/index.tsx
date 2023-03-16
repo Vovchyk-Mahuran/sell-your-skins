@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 
 // Constants
 import { ROUTERS } from 'constants/routers';
-import { HEADER_LINKS } from 'constants/headerLinks';
 
 // Images
 import Logo from 'assets/icons/logo.svg';
 
 // Components
 import Button from 'shared/components/Button';
-import HeaderItem from './components/HeaderItem';
 
 // Styles
 import './index.scss';
@@ -24,9 +22,6 @@ const Header: FC = () => (
 			</Link>
 			<nav className="header__nav">
 				<ul className="header__list">
-					{HEADER_LINKS.map(item => (
-						<HeaderItem key={item.href} item={item} />
-					))}
 					<Button classes="header__button header__button--desktop" btnText="Sign in with steam" />
 					<Button classes="header__button header__button--mobile" btnText="Sign in" />
 				</ul>

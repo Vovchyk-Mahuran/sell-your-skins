@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 // Images
 import BannerPlayer from 'assets/img/header-player.webp';
-import PlayIcon from 'assets/icons/play-icon.svg';
 
 // Components
 import Button from 'shared/components/Button';
@@ -25,13 +24,6 @@ const Banner: FC = () => (
 				</p>
 				<div className="banner__buttons">
 					<Button btnText="Try it now!" />
-					<span className="banner__button button__separator">OR</span>
-					<div className="banner__button button__watch">
-						<div className="button__watch--play">
-							<img src={PlayIcon} alt="Play" />
-						</div>
-						<span className="button__watch--text">Watch the tutorial</span>
-					</div>
 				</div>
 			</div>
 			<div className="banner__img">
