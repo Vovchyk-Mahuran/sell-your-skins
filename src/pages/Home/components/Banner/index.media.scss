@@ -37,8 +37,17 @@
             width: 100%;
             flex:none;
         }
+
         &__img {
             display: none;
+        }
+
+        &__buttons {
+            max-width: 100%;
+
+            .button {
+                width: 100%;
+            }
         }
     
     }
@@ -52,18 +61,6 @@
 
         &__description {
             font-size: 15px;
-        }
-
-        &__buttons {
-            max-width: 100%;
-
-            .button__watch, .button__separator {
-                display: none;
-            }
-        }
-
-        .button {
-            width: 100%;
         }
 
     }

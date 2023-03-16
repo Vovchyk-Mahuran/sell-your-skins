@@ -2,10 +2,6 @@
 
 @include tablet-lg {
     .header {
-        &__link {
-            display: none;
-        }
-
         &__button--desktop {
             display: none;
         }
