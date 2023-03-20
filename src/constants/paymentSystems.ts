@@ -13,13 +13,13 @@ import Bitcoin from 'assets/icons/bitcoin.svg';
 import Tether from 'assets/icons/tether.svg';
 
 export const PAYMENT_SYSTEMS: PaymentSystem[] = [
-	{ src: PayPal, title: 'PayPal' },
-	{ src: BankTransfer, title: 'Bank Transfer' },
-	{ src: Skrill, title: 'Skrill' },
-	{ src: Card, title: 'Card' },
-	{ src: Qiwi, title: 'Qiwi' },
-	{ src: YooMoney, title: 'YooMoney' },
-	{ src: WebMoney, title: 'WebMoney' },
-	{ src: Bitcoin, title: 'Bitcoin' },
-	{ src: Tether, title: 'Tether' },
+	{ src: PayPal, title: 'PayPal', min: 20, processingTime: '0-15 min', fee: 2.9, fixedFee: 0 },
+	{ src: BankTransfer, title: 'Bank Transfer', min: 20, processingTime: '0-24 hours', fee: 2.5, fixedFee: 0 },
+	{ src: Skrill, title: 'Skrill', min: 50, processingTime: '0-30 min', fee: 2.9, fixedFee: 0 },
+	{ src: Card, title: 'Card', min: 0, processingTime: 'Instant', fee: 3, fixedFee: 0.5 },
+	{ src: Qiwi, title: 'Qiwi', min: 0, processingTime: 'Instant', fee: 3, fixedFee: 0 },
+	{ src: YooMoney, title: 'YooMoney', min: 0, processingTime: 'Instant', fee: 3, fixedFee: 0 },
+	{ src: WebMoney, title: 'WebMoney', min: 10, processingTime: '0-30 min', fee: 1, fixedFee: 0 },
+	{ src: Bitcoin, title: 'Bitcoin', min: 3, processingTime: 'Instant', fee: 0.5, fixedFee: 10 },
+	{ src: Tether, title: 'Tether', min: 10, processingTime: 'Instant', fee: 0.5, fixedFee: 10 },
 ];

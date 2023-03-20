@@ -1,5 +1,14 @@
 @use '/src/styles/mixins/media.scss' as *;
 
+@include laptop-md {
+    .header {
+        .container-xl {
+            max-width: 100%;
+            padding: 0 12px;
+        }
+    }
+}
+
 @include tablet-lg {
     .header {
         &__button--desktop {
@@ -33,7 +42,7 @@
                 top: 17px;
                 left: 13px;
             }
-        }
+        }     
     }
 }
 

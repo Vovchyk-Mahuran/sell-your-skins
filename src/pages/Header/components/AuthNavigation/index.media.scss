@@ -1,0 +1,13 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet-sm {
+    .auth-header {
+        &__money {
+            display: none;
+        }
+
+        .header-user {
+            margin-left: 15px;
+        }
+    }
+}

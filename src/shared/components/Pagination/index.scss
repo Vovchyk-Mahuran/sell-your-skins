@@ -1,0 +1,45 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.pagination {
+    @include flex(space-between);
+    background-color: $skin-background;
+    border-radius: 4px;
+    padding: 10px 15px;
+    border: 1px solid $dark-border;
+
+    &__buttons {
+        @include flex;
+        gap: 16px;
+    }
+
+    &__button {
+        @include flex;
+        border-radius: 4px;
+        width: 50px;
+        height: 50px;
+        background-color: $skin-background;
+        border: 0;
+        transition: border .3s ease-in-out, background .3s ease-in-out;
+        font-size: 16px;
+
+        &:hover {
+            border: 1px solid $orange;
+            background-color: $active;
+            font-weight: 500;
+        }
+
+        &.active {
+            border: 1px solid $orange;
+            background-color: $active;
+            font-weight: 500;
+        }
+    }
+
+    &__amount {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $gray-text;
+        font-weight: 600;
+    }
+}

@@ -33,6 +33,18 @@ a {
     padding: 0 15px;
 }
 
+.container-xl {
+    width: 100%;
+    max-width: 100%;
+    padding:0 40px;    
+}
+
+.container-xxl {
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
 .marked {
     color: $orange
 }
@@ -41,12 +53,20 @@ a {
     height: 100%;
 }
 
+.w-full {
+    width: 100%;
+}
+
 .text-underlined {
     text-decoration: underline;
 }
 
 .text-center {
     text-align: center;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .pink {
@@ -67,4 +87,15 @@ a {
 
 .red {
     color: $red;
+}
+
+.react-tooltip {
+    z-index: 300;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }

@@ -1,0 +1,12 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/animations.scss' as *;
+
+.online {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: scale(1);
+    background-color: $light-green;
+    box-shadow: 0 0 0 $light-green;
+    animation: pulse-green 2s infinite;
+}
