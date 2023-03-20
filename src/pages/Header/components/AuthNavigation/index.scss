@@ -1,0 +1,111 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.auth-header {
+    display: flex;
+
+    &__item {
+        height: 100%;
+        padding: 0 8px;
+        list-style-type: none;
+        
+
+        svg {
+            font-size: 24px;
+            fill: $gray-text;
+            transition: transform 300ms ease-in-out;
+        }
+
+        &:hover {
+            background: $link-hover;
+            box-shadow: inset 0 -3px 0 0 $orange;
+
+            svg {
+                fill: $orange;
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    &__link {
+        @include flex;
+        height: 100%;
+        padding: 8px 16px;
+        transition: color .15s ease-in-out,
+            background-color .15s ease-in-out,
+            border-color .15s ease-in-out;
+    }
+
+    &__money {
+        @include flex;
+        padding: 8px 16px;
+        height: 50px;
+        align-self: center;
+        padding: 0 12px;
+        margin: 0 8px;
+        border: 1px solid $dark-border;
+        border-radius: 4px;
+        background-color: $secondary-background;
+
+        svg { 
+            margin-right: 16px;
+            font-size: 20px;
+            transition: transform 300ms ease-in-out;
+            
+            path:not(:first-child) {
+                fill: $light-green;
+            }
+        }
+
+        &:hover {
+            svg {
+                transform: translateY(-3px)
+            }
+        }
+    }
+
+    .header-user {
+        margin-left: 30px;
+        display: flex;
+        align-items: center;
+
+        &__info {
+            @include flex(center, flex-start, column);
+            margin-right: 15px;
+        }
+
+        &__name {
+            font-weight: 600;
+            font-size: 14px;
+            transition: color .3s ease-in-out;
+            margin-bottom: 2px;
+
+            &:hover {
+                color: $orange;
+                cursor: pointer;
+            }
+        }
+
+        &__logout {
+            @include flex(space-between);
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            span{
+                color: $gray-text;
+                font-weight: 500;
+            }
+
+            svg {
+                font-size: 20px;
+                margin-left: 5px;
+
+                path {
+                    stroke: $gray-text;
+                }
+            }
+        }
+    }
+}

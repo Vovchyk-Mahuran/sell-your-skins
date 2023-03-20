@@ -1,4 +1,5 @@
 $white: #ffffff;
+$black: #000;
 $gray: #777f99;
 $pink: #d32ce6;
 $yellow:#e3b315;
@@ -11,12 +12,20 @@ $main-background: #070a14;
 $secondary-background: #05070f;
 $skin-background: #0a0e1a;
 $dark-border: #0f1424;
+$overlay: #070a14f2;
 $gray-transparent: #aad0f966;
+$white-transparent: #ffffff80;
 $gray-text: #60758b;
 $scroll-bg: #2a333b;
+$active:rgba(247, 143, 31, .25);
 $btn-gradient: linear-gradient(90deg, #ff7d14 0%, #f94327 148.35%);
 $btn-hover-gradient: linear-gradient(90deg, #ff5b14 0%, #ff2200 148.35%);
 $dark-gradient: linear-gradient(0deg, #070A14 0%, #0D1120 100%);
 $trust-pilot-gradient: linear-gradient(0deg, rgba(7, 10, 20, 1) 46.5%, rgba(5, 7, 15, 1) 46.5%);
 $faq-gradient: linear-gradient(270.04deg, #0a0e1a 0.02%, rgba(18, 25, 45, 0.99) 99.96%);
 $faq-hover-background: linear-gradient(90deg, rgba(247, 143, 31, 0.16) 5%, rgba(18, 25, 45, 0.99) 99.96%);
+$selected-gradient: linear-gradient(360deg, rgba(17, 209, 94, 0.40) 0%, rgba(4, 4, 4, 0) 100%);
+$blocked-gradient: linear-gradient(180deg, rgba(199, 2, 2, 0) 0%, rgba(199, 2, 2, 0.58) 100%);
+$link-hover: linear-gradient(180deg, rgba(247, 143, 31, 0) 0%, rgba(247, 143, 31, 0.45) 134.57%);
+$payment-active: linear-gradient(180deg, rgba(247, 143, 31, 0) 0%, rgba(247, 143, 31, 0.08) 100%);
+

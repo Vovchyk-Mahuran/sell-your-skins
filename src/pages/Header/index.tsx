@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import cx from 'classnames';
 
 // Constants
 import { ROUTERS } from 'constants/routers';
@@ -7,27 +9,30 @@ import { ROUTERS } from 'constants/routers';
 // Images
 import Logo from 'assets/icons/logo.svg';
 
+// Selectors
+import { selectorIsAuth } from 'redux/user-service/selector';
+
 // Components
-import Button from 'shared/components/Button';
+import DefaultNavigation from './components/DefaultNavigation';
+import AuthNavigation from './components/AuthNavigation';
 
 // Styles
 import './index.scss';
 import './index.media.scss';
 
-const Header: FC = () => (
-	<div className="header">
-		<div className="container">
-			<Link className="header__logo" to={ROUTERS.HOME}>
-				<img src={Logo} alt="SELL YOUR SKINS" />
-			</Link>
-			<nav className="header__nav">
-				<ul className="header__list">
-					<Button classes="header__button header__button--desktop" btnText="Sign in with steam" />
-					<Button classes="header__button header__button--mobile" btnText="Sign in" />
-				</ul>
-			</nav>
+const Header: FC = () => {
+	const isAuth = useSelector(selectorIsAuth);
+
+	return (
+		<div className="header">
+			<div className={cx('container', { 'container-xl': isAuth })}>
+				<Link className="header__logo" to={ROUTERS.HOME}>
+					<img src={Logo} alt="SELL YOUR SKINS" />
+				</Link>
+				<nav className="header__nav">{isAuth ? <AuthNavigation /> : <DefaultNavigation />}</nav>
+			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 export default Header;

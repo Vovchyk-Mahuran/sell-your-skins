@@ -1,0 +1,22 @@
+@use '/src/styles/variables.scss' as *;
+
+.input {
+    display: inline-block;
+    width: 100%;
+    background-color: $skin-background;
+    border-radius: 4px;
+    border: 1px solid $dark-border;
+    padding: 14px 15px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $orange;
+
+    &:focus {
+        border: 1px solid $orange;
+    }
+
+    &::placeholder {
+        color: $gray-text;
+    }
+}

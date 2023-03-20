@@ -5,5 +5,6 @@ export const ROUTERS = {
 	HELP: '/help',
 	FAQ: '/faq',
 	FAQ_ID: '/faq/:title',
+	SELL: '/sell',
 	NOT_FOUND: '*',
 };

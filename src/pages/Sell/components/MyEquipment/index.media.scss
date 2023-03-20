@@ -1,0 +1,9 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet {
+    .pagination {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+}

@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { mockSales } from 'constants/mockSales';
 
 // Components
-import SkinCard from '../SkinCard';
+import SkinCard from 'shared/components/SkinCard';
 
 const SkinsCardList: FC = () => (
 	<div className="live-sales__skins-list skins__list">

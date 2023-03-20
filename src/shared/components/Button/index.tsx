@@ -7,10 +7,11 @@ import './index.scss';
 interface ButtonProps {
 	btnText: string;
 	classes?: string;
+	onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ btnText, classes }) => (
-	<button type="button" className={cx('button', classes)}>
+const Button: FC<ButtonProps> = ({ btnText, classes, onClick }) => (
+	<button onClick={onClick} type="button" className={cx('button', classes)}>
 		{btnText}
 	</button>
 );

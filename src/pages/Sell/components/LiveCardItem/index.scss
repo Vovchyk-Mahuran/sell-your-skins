@@ -1,0 +1,31 @@
+@use '/src/styles/mixins/classes.scss' as *;
+
+.live-card {
+    &__img {
+        @include flex;
+        height: 70%;
+
+        img {
+            width: 80px;
+            height: auto;
+        }
+    }
+
+    &__meta {
+        @include flex(space-between);
+        padding: 0 10px 10px;
+    }
+
+    &__price {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    &__payment {
+        max-width: 20px;
+        height: auto;
+        position: relative;
+        z-index: -1;
+        top: -3px;
+    }
+}

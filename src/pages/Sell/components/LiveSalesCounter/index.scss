@@ -1,0 +1,26 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.live-counter {
+    @include flex(center, flex-start, column);
+    flex: 0 0 auto;
+
+    &__pulse {
+        @include flex(flex-start);
+        gap: 5px;
+    }
+
+    &__title {
+        font-size: 16px;
+    }
+
+    &__description {
+        font-size: 14px;
+        color: $gray-text;
+    }
+
+    &__amount {
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
