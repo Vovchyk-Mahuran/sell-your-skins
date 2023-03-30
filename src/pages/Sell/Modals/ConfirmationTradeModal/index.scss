@@ -1,0 +1,121 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.status-modal {
+    width: 710px;
+
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .modal__body {
+        padding-top: 0;
+    }
+
+    .status-body {
+        margin-top: 25px;
+
+        .alert-success {
+            border: 2px solid $light-green;
+            border-radius: 4px;
+            padding: 24px;
+            background-color: $success;
+            @include flex(flex-start);
+
+            &__icon {
+                margin-right: 10px;
+                width: 24px;
+                
+                g {
+                    stroke: $light-green;
+                }
+            }
+
+            &__title {
+                color: $light-green;
+                font-weight: 600;
+                font-size: 17px;
+            }
+        }
+
+        &__additional-info {
+            margin: 16px 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: $gray-text;
+        }
+
+        &__title {
+            color:$light-green;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .bot-info {
+            border-radius: 4px;
+            border: 1px solid $dark-border;
+            margin-bottom: 16px;
+
+            &__icon {
+                width: 24px;
+            }
+
+            &__option {
+                padding: 20px;
+                background-color: $secondary-background;
+                @include flex(flex-start);
+                border-bottom: 1px solid $dark-border;
+
+                &:last-child {
+                    border-radius: 0 0 4px 4px;
+                    border-bottom: 0;
+                }
+                &:first-child {
+                    border-radius: 4px 4px 0 0;
+                }
+            }
+
+            &__key {
+                color: $gray-text;
+                margin-left: 8px;
+                margin-right: 4px;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        &__confirmation {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            &--browser {
+                @include flex;
+                gap: 10px;
+
+                &::before {
+                    content: url('~assets/icons/browser.svg');
+                    width: 24px;
+                    height: 24px;
+                    position: relative;
+                }
+            }
+
+            &--app {
+                background: $gray-text;
+                @include flex;
+                gap: 10px;
+
+                &::before {
+                    content: url('~assets/icons/steam.svg');
+                    width: 24px;
+                    height: 24px;
+                    position: relative;
+                }
+            }
+        }
+    }
+}

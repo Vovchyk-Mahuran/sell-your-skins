@@ -1,4 +1,5 @@
 @use '/src/styles/variables.scss' as *;
+@use '/src/styles/animations.scss' as *;
 @use '/src/styles/mixins/classes.scss' as *;
 
 .skin {
@@ -11,6 +12,7 @@
     border-radius: 4px;
     background-color: $skin-background;
     border: 0;
+    @include colored-box($default);
 
     &__header {
         @include flex(space-between, flex-start);
@@ -52,10 +54,7 @@
     &__title {
         font-weight: 600;
         font-size: 14px;
-    }
-
-    &__rarity {
-        font-size: 14px;
+        text-align: center;
     }
 
     &__overlay {
@@ -76,6 +75,18 @@
         &--blocked {
             box-shadow: 0 3px 0 0 $red;
             background: $blocked-gradient;
+
+        }
+    }
+
+    &--blocked {
+        &:hover {
+            animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+            background-image: $blocked-hover-gradient !important;
+            
+            .skin__overlay--blocked {
+                box-shadow: 0 3px 0 0 $error;
+            }
         }
     }
 
@@ -99,6 +110,10 @@
         @include colored-box($red);
     }
 
+    &--default {
+        @include colored-box($default)
+    }
+
     &:hover {
         transform: translateY(-5px);
         @include colored-box($light-green);
@@ -108,7 +123,7 @@
         }
     }
 
-    &-blur--blocked {
+    &__blur--blocked {
         filter: blur(1.5px) grayscale(95%)
     }
 }

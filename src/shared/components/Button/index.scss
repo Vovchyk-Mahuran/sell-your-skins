@@ -4,17 +4,23 @@
     color: $white;
     background: $btn-gradient;
     padding: 15.5px 35px;
-    box-shadow: 0 0 15px rgb(249 67 39 / 20%);
+    box-shadow: 0 0 15px $btn-shadow;
     font-weight: 700;
+    font-size: 14px;
     border-radius: 4px;
     cursor: pointer;
     border: none;
     outline: none;
-    transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out, opacity 300ms ease-in-out;
     text-transform: uppercase;
 
     &:hover {
         background: $btn-hover-gradient;
-        box-shadow: 0 0 15px rgb(249 67 39 / 30%);
+        box-shadow: 0 0 15px $btn-hover-shadow;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .6;
     }
 }

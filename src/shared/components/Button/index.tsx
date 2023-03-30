@@ -4,14 +4,17 @@ import cx from 'classnames';
 // Styles
 import './index.scss';
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	btnText: string;
 	classes?: string;
-	onClick?: () => void;
+	// onClick?: () => void;
+	// disabled?: boolean;
+	// type?: 'submit' | 'button';
 }
 
-const Button: FC<ButtonProps> = ({ btnText, classes, onClick }) => (
-	<button onClick={onClick} type="button" className={cx('button', classes)}>
+const Button: FC<ButtonProps> = ({ btnText, classes, ...props }) => (
+	// eslint-disable-next-line react/button-has-type
+	<button {...props} className={cx('button', classes)}>
 		{btnText}
 	</button>
 );

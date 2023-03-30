@@ -11,12 +11,13 @@
 
 @include tablet-lg {
     .header {
-        &__button--desktop {
+        .button--desktop {
             display: none;
         }
 
-        &__button--mobile {
+        .button--mobile {
             display: flex;
+            align-items: center;
         }
 
         &__button {
@@ -25,6 +26,31 @@
             &::before {
                 top: 18px;
             }
+        }
+    }
+}
+
+@include tablet {
+    .header {
+        height: 100%;
+        .container-xl {
+            min-height: 81px;
+        }
+
+        &__content {
+            min-height: 81px;
+        }
+    
+        &__nav{
+            display: none;
+
+            &--mobile {
+                display: flex;
+            }
+        }
+
+        .auth-burger {
+            display: block;
         }
     }
 }

@@ -1,9 +1,13 @@
 @use '/src/styles/mixins/media.scss' as *;
 
 @include tablet {
-    .pagination {
+    .equipment__pagination {
         flex-direction: column;
         justify-content: center;
         gap: 10px;
+
+        .pagination__buttons {
+            flex-wrap: wrap;
+        }
     }
 }

@@ -11,7 +11,7 @@
         
 
         svg {
-            font-size: 24px;
+            width: 24px;
             fill: $gray-text;
             transition: transform 300ms ease-in-out;
         }
@@ -36,34 +36,6 @@
             border-color .15s ease-in-out;
     }
 
-    &__money {
-        @include flex;
-        padding: 8px 16px;
-        height: 50px;
-        align-self: center;
-        padding: 0 12px;
-        margin: 0 8px;
-        border: 1px solid $dark-border;
-        border-radius: 4px;
-        background-color: $secondary-background;
-
-        svg { 
-            margin-right: 16px;
-            font-size: 20px;
-            transition: transform 300ms ease-in-out;
-            
-            path:not(:first-child) {
-                fill: $light-green;
-            }
-        }
-
-        &:hover {
-            svg {
-                transform: translateY(-3px)
-            }
-        }
-    }
-
     .header-user {
         margin-left: 30px;
         display: flex;
@@ -79,6 +51,8 @@
             font-size: 14px;
             transition: color .3s ease-in-out;
             margin-bottom: 2px;
+            max-width: 70px;
+            @include text-ellipsis;
 
             &:hover {
                 color: $orange;

@@ -4,8 +4,8 @@ import cx from 'classnames';
 // Types
 import { Step } from 'core/types/step.type';
 
-// Сomponents
-import Button from 'shared/components/Button';
+// Components
+import SteamLink from 'shared/components/SteamLink';
 import ManualStepList from '../ManualStepList';
 
 // Styles
@@ -29,7 +29,7 @@ const ManualStep: FC<ManualStepProps> = ({ step, index }) => {
 					<h3 className="step__title">{step.title}</h3>
 					<p className="step__description">{step.description}</p>
 					<ManualStepList items={step.list} />
-					<Button btnText="Try it now!" />
+					<SteamLink />
 				</div>
 				<div className="step__img">
 					<img src={step.img} alt={step.title} />

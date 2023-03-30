@@ -1,17 +1,17 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
+import { useAppSelector } from 'redux/root';
 
-// Constants
-import { mockSales } from 'constants/mockSales';
+// Selectors
+import { selectorGetLastSales } from 'redux/inventory-service/selector';
 
 // Components
-import SkinCard from 'shared/components/SkinCard';
+import SkinsList from 'shared/components/SkinsList';
 
-const SkinsCardList: FC = () => (
-	<div className="live-sales__skins-list skins__list">
-		{mockSales.map(skin => (
-			<SkinCard key={skin.id} skin={skin} />
-		))}
-	</div>
-);
+const SkinsCardList: FC = () => {
+	const lastSales = useAppSelector(selectorGetLastSales);
+	const skins = useMemo(() => lastSales?.slice(0, 7), [lastSales]);
+
+	return <SkinsList skins={skins} classes="live-sales__skins-list skins__list" />;
+};
 
 export default SkinsCardList;

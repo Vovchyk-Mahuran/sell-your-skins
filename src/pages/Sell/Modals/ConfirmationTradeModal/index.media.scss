@@ -1,0 +1,27 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet {
+    .status-modal {
+        width: 100%;
+        max-width: 540px;
+        height: fit-content;
+    }
+}
+
+@include mobile-lg {
+    .status-modal {
+        height: 100%;
+        padding: 25px;
+
+        .status-body{
+            &__additional-info {
+                font-size: 14px;
+                text-align: center;
+            }
+
+            &__title {
+                font-size: 18px;
+            }
+        }
+    }
+}
