@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 // Components
-import Button from 'shared/components/Button';
+import SteamLink from 'shared/components/SteamLink';
 
 // Styles
 import './index.scss';
@@ -14,7 +14,7 @@ const TrustPilot: FC = () => (
 				<h4 className="trust-pilot__title">
 					Getting money for your CS:GO skins doesn&apos;t have to be hard and annoying!
 				</h4>
-				<Button btnText="Try us now!" />
+				<SteamLink text="Try us now" />
 			</div>
 		</div>
 	</section>

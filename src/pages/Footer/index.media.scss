@@ -53,6 +53,10 @@
             &--mobile {
                 display: block;
                 width: 100%;
+
+                .accordion__arrow {
+                    top: 30%;
+                }
             }
 
             .accordion__button {

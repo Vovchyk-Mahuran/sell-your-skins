@@ -1,0 +1,87 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.auth-burger {
+    display: none;
+
+    &__icon {
+        height: 18px;
+        cursor: pointer;
+        transition: transform 0.5s;
+        @include flex(space-between, center, column);
+        
+        span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: $white;
+
+            &:first-child {
+                transform-origin: left center;
+            }
+
+            &:last-child {
+                transform-origin: left center;
+            }
+        }
+
+        &.active {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__menu {
+        top: 50px;
+        left: 0;
+        border-top: 1px solid $dark-border;
+        background-color: $skin-background;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        max-height: 0;
+        transition: max-height .5s ease-in-out;
+        overflow: hidden;
+        @include flex(space-between);
+
+        &.active {
+            max-height: 1000px;
+            height: auto;
+            transition: max-height .5s ease-in-out;
+        }
+    }
+
+    &__user {
+        @include flex(flex-start, center, row-reverse);
+        gap: 16px;
+        margin: 16px 0 16px 16px;
+    }
+
+    &__name {
+        font-size: 14px;
+    }
+
+    &__logout {
+        font-size: 14px;
+        @include flex(flex-start);
+        margin-top: 5px;
+        gap: 5px;
+
+        span {
+            font-weight: 500;
+            color: $gray-text;
+        }
+
+        svg path{
+            stroke: $gray-text;
+        }
+    }
+
+    &__link {
+        @include flex;
+        margin: 16px 16px 16px 0;
+        gap: 16px;
+
+        svg {
+            width: 24px;
+            fill: $gray-text;
+        }
+    }
+}

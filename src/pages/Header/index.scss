@@ -7,12 +7,20 @@
     
     .container {
         height: 100%;
+    }
+    
+    &__content {
         @include flex(space-between);
+        height: 100%;
     }
 
     &__nav {
         display: flex;
         height: 100%;
+
+        &--mobile {
+            display: none;
+        }
     }
 
     &__list {
@@ -21,17 +29,22 @@
         gap: 30px;
     }
 
-    &__button {
+    &__button.button {
         height: 55px;
         position: relative;
         padding-left: 66px;
 
         &::before {
             content: url('~assets/icons/steam.svg');
-            scale: 1.5;
+            width: 24px;
             left: 36px;
-            top: 20px;
+            top: 16px;
             position: absolute;
+        }
+
+        &--desktop {
+            display: flex;
+            align-items: center;
         }
 
         &--mobile {

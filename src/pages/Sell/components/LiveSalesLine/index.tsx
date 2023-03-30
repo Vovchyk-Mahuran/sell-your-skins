@@ -1,6 +1,10 @@
 import { FC } from 'react';
+import { useAppSelector } from 'redux/root';
 
-// Counter
+// Selectors
+import { selectorGetLastSales } from 'redux/inventory-service/selector';
+
+// Componets
 import LiveSalesCounter from '../LiveSalesCounter';
 import LiveCard from '../LiveCard';
 
@@ -8,32 +12,15 @@ import LiveCard from '../LiveCard';
 import './index.scss';
 
 const LiveSalesLine: FC = () => {
+	const lastSales = useAppSelector(selectorGetLastSales);
+
 	return (
 		<section className="live-sales-line">
 			<LiveSalesCounter />
 			<div className="live-sales-cards">
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
-				<LiveCard />
+				{lastSales?.map(sale => (
+					<LiveCard key={sale.id} details={sale} />
+				))}
 			</div>
 		</section>
 	);

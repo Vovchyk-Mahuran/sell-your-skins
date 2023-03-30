@@ -89,6 +89,14 @@ a {
     color: $red;
 }
 
+.default {
+    color: $default;
+}
+
+.show {
+    opacity: 1;
+}
+
 .react-tooltip {
     z-index: 300;
 }

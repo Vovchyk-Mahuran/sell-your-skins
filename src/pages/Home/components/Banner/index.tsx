@@ -4,7 +4,7 @@ import { FC } from 'react';
 import BannerPlayer from 'assets/img/header-player.webp';
 
 // Components
-import Button from 'shared/components/Button';
+import SteamLink from 'shared/components/SteamLink';
 
 // Styles
 import './index.scss';
@@ -23,7 +23,7 @@ const Banner: FC = () => (
 					quick transaction.
 				</p>
 				<div className="banner__buttons">
-					<Button btnText="Try it now!" />
+					<SteamLink text="Try it now" />
 				</div>
 			</div>
 			<div className="banner__img">

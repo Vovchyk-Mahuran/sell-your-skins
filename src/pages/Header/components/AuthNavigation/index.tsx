@@ -1,18 +1,20 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
-import { useAppDispatch } from 'redux/root';
+import { useAppDispatch, useAppSelector } from 'redux/root';
 import SVG from 'react-inlinesvg';
 
 // Constants
 import { ROUTERS } from 'constants/routers';
+
+// Selectors
+import { selectorGetUser } from 'redux/user-service/selector';
 
 // Actions
 import { logout } from 'redux/user-service/reducer';
 
 // Images
 import SupportIcon from 'assets/icons/support.svg';
-import WalletIcon from 'assets/icons/wallet.svg';
 import LogoutIcon from 'assets/icons/exit.svg';
 
 // Components
@@ -24,6 +26,7 @@ import './index.media.scss';
 
 const AuthNavigation: FC = () => {
 	const dispatch = useAppDispatch();
+	const user = useAppSelector(selectorGetUser);
 
 	const handleLogout = () => {
 		dispatch(logout());
@@ -43,19 +46,15 @@ const AuthNavigation: FC = () => {
 				</Link>
 				<Tooltip id="support" />
 			</div>
-			<Link to=" " className="auth-header__money">
-				<SVG src={WalletIcon} />
-				<span className="auth-header__money-count">0 USD</span>
-			</Link>
 			<div className="auth-header__user header-user">
 				<div className="header-user__info">
-					<h6 className="header-user__name">vitatov44</h6>
+					<h6 className="header-user__name">{user.username}</h6>
 					<button className="header-user__logout" onClick={handleLogout} type="button">
 						<span>Sign out</span>
 						<SVG src={LogoutIcon} cacheRequests />
 					</button>
 				</div>
-				<Avatar classes="header-user__avatar" />
+				<Avatar src={user.avatar} classes="header-user__avatar" />
 			</div>
 		</div>
 	);
