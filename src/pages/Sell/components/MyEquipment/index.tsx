@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { FC } from 'react';
 
 // Hooks
@@ -5,6 +6,7 @@ import { useEquipmentPage } from 'shared/hooks/useEquipmentPage';
 
 // Components
 import SkinsList from 'shared/components/SkinsList';
+import Spinner from 'shared/components/Spinner';
 import Pagination from 'shared/components/Pagination';
 import TradeLink from '../TradeLink';
 
@@ -13,11 +15,16 @@ import './index.scss';
 import './index.media.scss';
 
 const MyEquipment: FC = () => {
-	const { displayedItems, inventory, page, changePage, itemsPerPage } = useEquipmentPage();
+	const { displayedItems, inventory, page, changePage, itemsPerPage, isLoading } = useEquipmentPage();
+
 	return (
 		<div className="equipment">
 			<TradeLink />
-			{displayedItems.length ? (
+			{isLoading ? (
+				<div className="equipment__loader">
+					<Spinner />
+				</div>
+			) : !!displayedItems.length ? (
 				<>
 					<SkinsList skins={displayedItems} classes="equipment__grid live-sales__skins-list" />
 					<Pagination

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useAppSelector } from 'redux/root';
 
 // Constants
@@ -7,11 +7,20 @@ import { LAPTOP, LAPTOP_SM, MOBILE_SM, TABLET_LG, TABLET_SM } from 'constants/wi
 // Selectors
 import { selectorGetInventory } from 'redux/inventory-service/selector';
 
+// Actions
+import { getInventory } from 'redux/inventory-service/actions';
+
 // Hooks
 import { useResize } from 'shared/hooks/useResize';
+import { useLoading } from './useLoading';
 
 export const useEquipmentPage = () => {
 	const { windowSize } = useResize();
+	const { isLoading, startLoading } = useLoading();
+
+	useEffect(() => {
+		startLoading(getInventory());
+	}, []);
 
 	const inventory = useAppSelector(selectorGetInventory);
 
@@ -43,5 +52,5 @@ export const useEquipmentPage = () => {
 		setPage(index);
 	};
 
-	return { displayedItems, changePage, inventory, page, itemsPerPage };
+	return { displayedItems, changePage, inventory, page, itemsPerPage, isLoading };
 };

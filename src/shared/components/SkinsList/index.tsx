@@ -15,7 +15,7 @@ interface SkinsListProps {
 const SkinsList: FC<SkinsListProps> = ({ skins, classes }) => {
 	return (
 		<div className={cx('skins-list', classes)}>
-			{skins.map(skin => (
+			{skins?.map(skin => (
 				<SkinCard key={skin.id} skin={skin} />
 			))}
 		</div>

@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import { StorageKeys } from 'constants/storageKeys';
 
 // Actions
-import { createTrade, getActiveTrade, getUserData, setTradeUrl, signIn } from './actions';
+import { createTrade, getActiveTrade, getUserData, setTradeUrl } from './actions';
 
 // Types
 import { IUserReducer } from './interface';
@@ -45,10 +45,10 @@ export const userStore = createSlice({
 	reducers: {
 		logout: logoutOperation,
 		clearTrade: clearTradeOperation,
+		signIn: signInOperation,
 	},
 	extraReducers: builder => {
 		builder
-			.addCase(signIn.fulfilled, signInOperation)
 			.addCase(getUserData.fulfilled, getUserOperation)
 			.addCase(setTradeUrl.fulfilled, setTradeUrlOperation)
 			.addCase(setTradeUrl.rejected, setTradeUrlError)
@@ -57,5 +57,5 @@ export const userStore = createSlice({
 	},
 });
 
-export const { logout, clearTrade } = userStore.actions;
+export const { logout, clearTrade, signIn } = userStore.actions;
 export default userStore.reducer;

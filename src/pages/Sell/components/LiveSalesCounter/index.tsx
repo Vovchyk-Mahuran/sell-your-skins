@@ -12,7 +12,7 @@ import './index.scss';
 
 const LiveSalesCounter: FC = () => {
 	const lastSales = useAppSelector(selectorGetLastSales);
-	const salesLength = useMemo(() => lastSales.length || 0, [lastSales.length]);
+	const salesLength = useMemo(() => lastSales?.length || 0, [lastSales?.length]);
 
 	return (
 		<div className="live-sales__counter live-counter">

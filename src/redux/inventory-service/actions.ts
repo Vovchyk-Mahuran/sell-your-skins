@@ -18,7 +18,11 @@ export const getLastSoldItems = createAsyncThunk(INVENTORY_LAST_SOLD_ITEMS, asyn
 });
 
 export const getInventory = createAsyncThunk(INVENTORY_GET_INVENTORY, async (appId: string = '730') => {
-	const { data } = await axios.get(API.GET_INVENTORY(appId));
+	const { data } = await axios.get(API.GET_INVENTORY(appId)).then(
+		await new Promise(resolve => {
+			setTimeout(resolve, 1000);
+		})
+	);
 	return data;
 });
 

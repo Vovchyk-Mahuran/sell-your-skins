@@ -35,8 +35,8 @@ export const setTradeUrl = createAsyncThunk(USER_SET_TRADE_URL, async (tradeUrl:
 export const createTrade = createAsyncThunk(USER_CRETE_TRADE, async (tradeDTO: any) => {
 	try {
 		const { data } = await axios.post(API.CREATE_TRADE, tradeDTO).then(
-			await new Promise(reslove => {
-				setTimeout(reslove, 3000);
+			await new Promise(resolve => {
+				setTimeout(resolve, 3000);
 			})
 		);
 		return data;
