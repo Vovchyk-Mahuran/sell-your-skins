@@ -45,13 +45,11 @@ export const useTradeModals = () => {
 	};
 
 	const startTimer = () => {
-		// console.log('id', tradeId, 'status', tradeInfo?.status);
 		const startCounter: NodeJS.Timeout = setInterval(getActiveTradeStatus, 5000);
 		setTimerInterval(startCounter);
 	};
 
 	const finishTimer = () => {
-		// console.log('id1', tradeId, 'status1', tradeInfo?.status);
 		clearInterval(timerInterval);
 		setActiveModal(tradeInfo?.status);
 		setTimerInterval(undefined);
@@ -68,18 +66,16 @@ export const useTradeModals = () => {
 	}, [tradeInfo]);
 
 	useEffect(() => {
-		if (typeof tradeInfo?.status === 'string' && !!tradeInfo.id) {
-			// console.log('111111', tradeInfo?.status, 'aaaa', tradeInfo.id);
-			startTimer();
+		if (typeof tradeInfo?.status === 'string') {
+			if (!!tradeInfo?.id && !timerInterval) {
+				startTimer();
+			}
 
 			if (tradeInfo?.status !== TradeModals.NEW) {
-				// console.log('22222', tradeInfo.status, 'aaaaa', tradeInfo.id);
 				finishTimer();
 			}
-		} else {
-			clearInterval(timerInterval);
 		}
-	}, [tradeInfo]);
+	}, [tradeInfo, timerInterval]);
 
 	useEffect(() => {
 		if (activeModal) {

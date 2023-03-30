@@ -21,7 +21,12 @@ const SuccessTrade: FC<SuccessTradeProps> = ({ isOpen, onClose }) => {
 		<Modal isOpen={isOpen} classes="success-trade">
 			<div className="success-trade__content">
 				<div className="success-trade__header">
-					<SVG onClick={onClose} src={CloseIcon} cacheRequests className="success-trade__close" />
+					<SVG
+						onClick={onClose}
+						src={CloseIcon}
+						cacheRequests
+						className="success-trade__close modal__close"
+					/>
 				</div>
 				<img className="success-trade__image" src={SuccesTradeIcon} alt="Success Trade" />
 				<h2 className="success-trade__title">Trade was completed succesfully!</h2>

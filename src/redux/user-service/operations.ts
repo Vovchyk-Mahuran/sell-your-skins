@@ -35,9 +35,8 @@ export const createTradeOperation = (state: IUserReducer, { payload }: PayloadAc
 	return { ...state, tradeInfo: payload };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getActiveTradeOperation = (state: IUserReducer, { payload }: PayloadAction<TradeInfo>) => {
-	return { ...state, tradeInfo: { ...state.tradeInfo, status: 'accepted' } };
+	return { ...state, tradeInfo: { ...state.tradeInfo, status: payload.status } };
 };
 
 export const clearTradeOperation = (state: IUserReducer) => {

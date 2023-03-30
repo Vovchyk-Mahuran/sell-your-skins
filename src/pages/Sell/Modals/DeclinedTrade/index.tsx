@@ -21,7 +21,12 @@ const DeclinedTrade: FC<DeclinedTradeProps> = ({ isOpen, onClose }) => {
 		<Modal isOpen={isOpen} classes="declined-trade">
 			<div className="declined-trade__content">
 				<div className="declined-trade__header">
-					<SVG onClick={onClose} src={CloseIcon} cacheRequests className="declined-trade__close" />
+					<SVG
+						onClick={onClose}
+						src={CloseIcon}
+						cacheRequests
+						className="declined-trade__close modal__close"
+					/>
 				</div>
 				<img className="declined-trade__image" src={DeclineTradeIcon} alt="Declined Trade" />
 				<h2 className="declined-trade__title">Trade was declined!</h2>

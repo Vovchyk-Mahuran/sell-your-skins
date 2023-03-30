@@ -41,7 +41,10 @@ export const usePaymentForm = (selected: string) => {
 		return '';
 	}, [currentMethod]);
 
-	const isButtonDisabled = useMemo(() => false, [userTransactionValue, totalWithFee, urlError]);
+	const isButtonDisabled = useMemo(
+		() => !userTransactionValue || totalWithFee < 0 || !!urlError,
+		[userTransactionValue, totalWithFee, urlError]
+	);
 
 	return { fee, totalPrice, amount, currentMethod, isButtonDisabled };
 };
