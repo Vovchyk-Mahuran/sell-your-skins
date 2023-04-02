@@ -9,7 +9,6 @@ export const FAQ_DATA: FaqItem[] = [
 		category: FaqCategory.General,
 		content: `<p>Regarding technical issues, it is best you contact us via e-mail: <strong>contact@skinsdeals.com</strong></p> 
 			<p>For business inquiries, contact us at: <strong>business@skinsdeals.com</strong></p>
-			<p>We kindly ask not to contact us via social media (Facebook, Instagram, Twitter) regarding technical issues.</p>
 			<p><strong>Please also do not send your message in multiple places as this will substantially slow down the answer!</strong></p>`,
 	},
 	{
@@ -38,14 +37,7 @@ export const FAQ_DATA: FaqItem[] = [
 		content: `<p><strong>First of all, don't panic! 😊</strong></p>
 		<p>A major part of our payments have systems detecting wrong payment details format and stopping the payments from being processed.</p>
 		<p>Please contact us via e-mail at: <strong>contact@skinsdeals.com</strong> and provide us with as much information as possible, so we can check on your case.</p>
-		<p>We will do whatever we can to help you recover your funds and forward them to correct data, but please note that if what you provided was correct data of someone else's, we may not be able to recover a finalized transfer (via bank transfer, PayPal, etc.)</p>`,
-	},
-	{
-		id: crypto.randomUUID(),
-		title: 'Why should I trust you? Is this a scam?',
-		category: FaqCategory.General,
-		content: `<p>Our site has been operating since 2019, serving nearly <strong>40.000 users</strong> in over <strong>5.000 transactions</strong> worth over <strong>440.000 USD!</strong></p>
-		<p>These are some pretty nice numbers, but if it still doesn't convince you, we have been and still are actively working with a wide range of popular YouTubers with both international and regional audiences. Take a look at the "<strong>THEY TALKED ABOUT US:</strong>" tab on the main page :)</p><p>Apart from the marketing activities, we are also a legally registered and regulated entity, details of which you can find in our Legal tabs. You don't have to worry with dealing with some unknown, unregistered service provider, you know what you get.</p>`,
+		<p>We will do whatever we can to help you recover your funds and forward them to correct data, but please note that if what you provided was correct data of someone else's, we may not be able to recover a finalized transfer.</p>`,
 	},
 	{
 		id: crypto.randomUUID(),
@@ -69,16 +61,14 @@ export const FAQ_DATA: FaqItem[] = [
 		id: crypto.randomUUID(),
 		title: 'How long do I need to wait for the payment?',
 		category: FaqCategory.Payments,
-		content: `<p>All of the offered payment methods are sent out by us <strong>instantly</strong>. This means that your funds should be fully visible on your chosen payment wallet within 5 minutes of a received success (payment sent) e-mail.</p>
-		<p>Please note that if you chose <strong>Bank Transfer,&nbsp;</strong>the transfer time depends strictly on your bank. If it supports Instant SEPA Transfers, then it should be a matter of minutes. If not, it might take up to 1-2 business days.</p>
+		content: `<p>All of the offered payment methods are sent out by us <strong>instantly</strong>. This means that your funds should be fully visible on your chosen payment wallet within 5 minutes of accepting the trade..</p>
 		<p>Also, <strong>cryptocurrencies&nbsp;</strong>may require a few block confirmations to appear on your wallet. This time depends on the type of cryptocurrency and the current load on its network. If you haven't received your crypto, allow it for 15-30 minutes to get fully confirmed.</p>`,
 	},
 	{
 		id: crypto.randomUUID(),
 		title: 'What payment methods are available?',
 		category: FaqCategory.Payments,
-		content: `<p><strong>The currently offered payment methods are:</strong><br>- PayPal&nbsp;<br>- Bank Transfers to over 70 countries<br>- AdvCash&nbsp;<br>- QIWI&nbsp;<br>- WebMoney&nbsp;<br>- AirTM&nbsp;<br>- YooMoney&nbsp;<br>- Skrill&nbsp;<br>- PIX<br>- VISA/MasterCard (Ukraine issued only)</p>
-		<p><strong>Cryptocurrencies:</strong><br>Bitcoin, Ethereum, Litecoin, Tether ERC-20, Bitcoin Cash, Dogecoin, Tron<br><br>Please note that some payment methods may be charged with additional fees, as indicated on the Website, upon choosing each payment method.</p>`,
+		content: `<p><strong>Cryptocurrencies:</strong><br>Bitcoin, Ethereum, Litecoin, Tether ERC-20, Bitcoin Cash, Dogecoin, Tron<br><br>Please note that some payment methods may be charged with additional fees, as indicated on the Website, upon choosing each payment method.</p>`,
 	},
 	{
 		id: crypto.randomUUID(),
@@ -117,7 +107,7 @@ export const FAQ_DATA: FaqItem[] = [
 		id: crypto.randomUUID(),
 		title: 'What is skinsdeals.com?',
 		category: FaqCategory.General,
-		content: `<p><strong>skinsdeals.com is a site that allows you to sell your virtual items, such as CS:GO skins for real cash.</strong> Cashout to your PayPal, Bank Account, a wide variety of online wallets and cards or cryptocurrencies in an easy and safe way - it takes just a few steps:</p>
+		content: `<p><strong>skinsdeals.com is a site that allows you to sell your virtual items, such as CS:GO skins for real cash.</strong> Cashout to your cryptocurrencies wallet in an easy and safe way - it takes just a few steps:</p>
 		<p>- select the items you want to sell,</p>
 		<p>- fill in your payment details,</p>
 		<p>- accept the offer from our bot,</p>

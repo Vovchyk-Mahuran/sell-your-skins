@@ -6,8 +6,6 @@ export const FOOTER_LINKS: FooterColumn[] = [
 		items: [
 			{ title: 'Sell Skins', href: '/' },
 			{ title: 'About Us', href: '/' },
-			{ title: 'Bonus System', href: '/' },
-			{ title: 'Blog', href: '/' },
 			{ title: 'FAQ', href: '/faq' },
 		],
 	},
@@ -25,7 +23,6 @@ export const FOOTER_LINKS: FooterColumn[] = [
 			{ title: 'How to Sell Skins?', href: '/' },
 			{ title: 'How to Set Up Your Account?', href: '/' },
 			{ title: 'How to Find Your Trade URL?', href: '/' },
-			{ title: 'Watch More Tutorials', href: '/' },
 		],
 	},
 ];
