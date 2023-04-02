@@ -6,4 +6,5 @@ export const ROUTERS = {
 	NOT_FOUND: '*',
 	STEAM_AUTH: 'https://api-skinsdeals.com/api/auth/steam',
 	STEAM_TRADE: (id: string) => `https://steamcommunity.com/tradeoffer/${id}`,
+	STEAM_APP: (id: string) => `steam://url/ShowTradeOffer/${id}`,
 };

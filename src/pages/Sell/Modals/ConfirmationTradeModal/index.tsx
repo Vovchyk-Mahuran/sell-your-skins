@@ -13,7 +13,6 @@ import AccountCreatedIcon from 'assets/icons/calendar.svg';
 import { getActiveTrade } from 'redux/user-service/actions';
 
 // Components
-import Button from 'shared/components/Button';
 import TradeModal from 'shared/components/TradeModal';
 
 // Styles
@@ -83,7 +82,15 @@ const ConfirmationTradeModal: FC<ConfirmationTradeModalProps> = ({ isOpen }) => 
 					>
 						Confirm in browser
 					</Link>
-					<Button classes="status-body__confirmation--app" btnText="Confirm in steam application" />
+					<Link
+						to={ROUTERS.STEAM_APP(tradeInfo?.steam_trade_id)}
+						onClick={getTradeStatus}
+						target="_blank"
+						rel="noreferrer"
+						className="button status-body__confirmation--app"
+					>
+						Confirm in steam application
+					</Link>
 				</div>
 			</div>
 		</TradeModal>
