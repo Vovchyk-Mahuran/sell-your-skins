@@ -21,7 +21,7 @@ const LiveSalesCounter: FC = () => {
 				<h5 className="live-counter__title">Live Sales</h5>
 			</div>
 			<p className="live-counter__description">Number of items sold: </p>
-			<span className="live-counter__amount">{salesLength}</span>
+			<span className="live-counter__amount">{14551 + salesLength}</span>
 		</div>
 	);
 };
