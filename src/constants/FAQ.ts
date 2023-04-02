@@ -5,7 +5,7 @@ import { FaqItem } from 'core/types/faq-item.type';
 export const FAQ_DATA: FaqItem[] = [
 	{
 		id: crypto.randomUUID(),
-		title: 'How can I contact SellYourSkins?',
+		title: 'How can I contact SkinsDeals?',
 		category: FaqCategory.General,
 		content: `<p>Regarding technical issues, it is best you contact us via e-mail: <strong>contact@sellyourskins.com</strong></p> 
 			<p>For business inquiries, contact us at: <strong>business@sellyourskins.com</strong></p>
