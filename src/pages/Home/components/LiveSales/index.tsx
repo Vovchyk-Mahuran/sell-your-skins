@@ -9,7 +9,7 @@ import './index.scss';
 const LiveSales: FC = () => (
 	<div className="container">
 		<h4 className="live-sales__title">
-			Live Sales on <span className="marked">SellYourSkins.com</span>
+			Live Sales on <span className="marked">SkinsDeals.com</span>
 		</h4>
 		<SkinsCardList />
 	</div>

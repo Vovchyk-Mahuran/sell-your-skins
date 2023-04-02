@@ -7,8 +7,8 @@ export const FAQ_DATA: FaqItem[] = [
 		id: crypto.randomUUID(),
 		title: 'How can I contact SkinsDeals?',
 		category: FaqCategory.General,
-		content: `<p>Regarding technical issues, it is best you contact us via e-mail: <strong>contact@sellyourskins.com</strong></p> 
-			<p>For business inquiries, contact us at: <strong>business@sellyourskins.com</strong></p>
+		content: `<p>Regarding technical issues, it is best you contact us via e-mail: <strong>contact@skinsdeals.com</strong></p> 
+			<p>For business inquiries, contact us at: <strong>business@skinsdeals.com</strong></p>
 			<p>We kindly ask not to contact us via social media (Facebook, Instagram, Twitter) regarding technical issues.</p>
 			<p><strong>Please also do not send your message in multiple places as this will substantially slow down the answer!</strong></p>`,
 	},
@@ -44,7 +44,7 @@ export const FAQ_DATA: FaqItem[] = [
 		category: FaqCategory.Popular,
 		content: `<p><strong>First of all, don't panic! 😊</strong></p>
 		<p>A major part of our payments have systems detecting wrong payment details format and stopping the payments from being processed.</p>
-		<p>Please contact us via e-mail at: <strong>contact@sellyourskins.com</strong> and provide us with as much information as possible, so we can check on your case.</p>
+		<p>Please contact us via e-mail at: <strong>contact@skinsdeals.com</strong> and provide us with as much information as possible, so we can check on your case.</p>
 		<p>We will do whatever we can to help you recover your funds and forward them to correct data, but please note that if what you provided was correct data of someone else's, we may not be able to recover a finalized transfer (via bank transfer, PayPal, etc.)</p>`,
 	},
 	{
@@ -92,7 +92,7 @@ export const FAQ_DATA: FaqItem[] = [
 		title: 'Is the price negotiable?',
 		category: FaqCategory.General,
 		content: `<p><strong>Unfortunately, NO. </strong>The prices visible to you are not negotiable, yet keep in mind there are a few exceptions from this rule:</p>
-		<p>- you can contact us if you clearly believe you've experienced a pricing <strong>BUG</strong>, that is if your 1000$ knife is worth 0.01$; while this is <strong>extremely unlikely</strong>, if it happens, contact us ASAP!<br><br>- if you are looking to <strong>supply in bulk</strong> - wholesale quantities of items (10.000$+/mo.) - whether you are a physical or a legal entity willing to partner in B2B model, write us at: <strong>wholesale@sellyourskins.com</strong></p>`,
+		<p>- you can contact us if you clearly believe you've experienced a pricing <strong>BUG</strong>, that is if your 1000$ knife is worth 0.01$; while this is <strong>extremely unlikely</strong>, if it happens, contact us ASAP!<br><br>- if you are looking to <strong>supply in bulk</strong> - wholesale quantities of items (10.000$+/mo.) - whether you are a physical or a legal entity willing to partner in B2B model, write us at: <strong>wholesale@skinsdeals.com</strong></p>`,
 	},
 	{
 		id: crypto.randomUUID(),
@@ -108,7 +108,7 @@ export const FAQ_DATA: FaqItem[] = [
 		id: crypto.randomUUID(),
 		title: 'Can I get real money for my skins?',
 		category: FaqCategory.General,
-		content: `<p><strong>YES!&nbsp;</strong>That is exactly why we have created SellYourSkins.com for your convenience.&nbsp;</p>
+		content: `<p><strong>YES!&nbsp;</strong>That is exactly why we have created skinsdeals.com for your convenience.&nbsp;</p>
 		<p>While you can use the Steam Community Market to sell your items for virtual funds, these can be used only within the platform, to buy games or other items - with our service you get the <strong>REAL CASH</strong> straight to your pocket! 🤑<br><br>Try us out now!</p>`,
 	},
 	{
@@ -122,9 +122,9 @@ export const FAQ_DATA: FaqItem[] = [
 	},
 	{
 		id: crypto.randomUUID(),
-		title: 'What is SellYourSkins.com?',
+		title: 'What is skinsdeals.com?',
 		category: FaqCategory.General,
-		content: `<p><strong>SellYourSkins.com is a site that allows you to sell your virtual items, such as CS:GO skins for real cash.</strong> Cashout to your PayPal, Bank Account, a wide variety of online wallets and cards or cryptocurrencies in an easy and safe way - it takes just a few steps:</p>
+		content: `<p><strong>skinsdeals.com is a site that allows you to sell your virtual items, such as CS:GO skins for real cash.</strong> Cashout to your PayPal, Bank Account, a wide variety of online wallets and cards or cryptocurrencies in an easy and safe way - it takes just a few steps:</p>
 		<p>- select the items you want to sell,</p>
 		<p>- fill in your payment details,</p>
 		<p>- accept the offer from our bot,</p>
