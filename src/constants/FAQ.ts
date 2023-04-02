@@ -14,13 +14,6 @@ export const FAQ_DATA: FaqItem[] = [
 	},
 	{
 		id: crypto.randomUUID(),
-		title: 'How can I use a referral code?',
-		category: FaqCategory.Payments,
-		content: `<p>To use a referral code and receive your welcome bonus of 3%, find the '<strong>BONUS CODE'</strong> section on the top navbar, enter the code and click "Use code".</p>
-		<p>Your bonus will appear automatically :)</p>`,
-	},
-	{
-		id: crypto.randomUUID(),
 		title: "I haven't received any confirmation e-mails.",
 		category: FaqCategory.Popular,
 		content: `<p><strong>If you haven't received any confirmation e-mails - don't worry!</strong> In 99% of the cases this is the mail server being overloaded :)</p>
