@@ -33,8 +33,8 @@ const Footer: FC = () => (
 				))}
 			</div>
 			<p className="footer__copyright">
-				Copyright © 2023 SkinsDeals.com. All rights reserved. Powered by Steam, a registered trademark of
-				Valve Corporation. Valve, the Valve logo, the Steam logo, Counter-Strike and the Counter-Strike logo are
+				Copyright © 2023 SkinsDeals.com. All rights reserved. Powered by Steam, a registered trademark of Valve
+				Corporation. Valve, the Valve logo, the Steam logo, Counter-Strike and the Counter-Strike logo are
 				trademarks and/or registered trademarks of Valve Corporation. All other trademarks are property of their
 				respective owners. SkinsDeals.com is in no way affiliated with or endorsed by Valve Corporation. This
 				site is not affiliated with VALVE corp
