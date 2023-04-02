@@ -17,8 +17,8 @@ jobs:
           node-version: '16.14.0'
       - name: Install
         run: npm install
-#      - name: Lint
-#        run: npm run eslint
+      - name: Lint
+        run: npm run eslint
       - name: Format
         run: npm run prettier
       - name: Build
