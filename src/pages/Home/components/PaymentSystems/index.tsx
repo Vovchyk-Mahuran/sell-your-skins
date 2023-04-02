@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 // Constants
-//import { PAYMENT_SYSTEMS } from 'constants/paymentSystems';
+// import { PAYMENT_SYSTEMS } from 'constants/paymentSystems';
 import { CHECKOUT_SYSTEMS } from 'constants/checkoutMethods';
 
 // Styles
