@@ -12,9 +12,9 @@ import TetherERC20 from 'assets/icons/tether-erc.svg';
 import Ethereum from 'assets/icons/ethereum.svg';
 
 export const CHECKOUT_SYSTEMS: PaymentSystem[] = [
-	{ src: Bitcoin, title: PaymentMethod.BITCOIN, min: 50, processingTime: 'Instant', fee: 0, fixedFee: 3 },
+	{ src: Bitcoin, title: PaymentMethod.BITCOIN, min: 20, processingTime: 'Instant', fee: 0, fixedFee: 3 },
 	{ src: TetherERC20, title: PaymentMethod.TETHER_ERC20, min: 3, processingTime: 'Instant', fee: 0, fixedFee: 1 },
 	{ src: TetherTRC20, title: PaymentMethod.TETHER_TRC20, min: 3, processingTime: 'Instant', fee: 0, fixedFee: 0.2 },
-	{ src: Ethereum, title: PaymentMethod.ETHEREUM, min: 5, processingTime: 'Instant', fee: 0, fixedFee: 3 },
-	{ src: Card, title: PaymentMethod.CARD, min: 0.5, processingTime: 'Instant', fee: 3, fixedFee: 0.5 },
+	{ src: Ethereum, title: PaymentMethod.ETHEREUM, min: 5, processingTime: 'Instant', fee: 0, fixedFee: 1 },
+	{ src: Card, title: PaymentMethod.CARD, min: 5, processingTime: 'Instant', fee: 3, fixedFee: 0.5 },
 ];
