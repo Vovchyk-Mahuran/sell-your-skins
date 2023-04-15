@@ -4,4 +4,5 @@ export enum PaymentMethod {
 	BITCOIN = 'bitcoin',
 	ETHEREUM = 'ethereum',
 	CARD = 'card',
+	PAYPAL = 'paypal',
 }
