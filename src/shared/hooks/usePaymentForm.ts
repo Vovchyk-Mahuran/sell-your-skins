@@ -25,7 +25,7 @@ export const usePaymentForm = (selected: string) => {
 
 	const totalPrice = useMemo(() => {
 		if (currentMethod) {
-			return totalWithFee > 0
+			return totalWithFee > (currentMethod.min + 0.01)
 				? `${totalWithFee.toFixed(2)} $`
 				: `Minimum transaction value is ${currentMethod.min + 0.01} $`;
 		}
