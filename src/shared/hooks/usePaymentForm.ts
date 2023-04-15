@@ -27,7 +27,7 @@ export const usePaymentForm = (selected: string) => {
 		if (currentMethod) {
 			return totalWithFee > 0
 				? `${totalWithFee.toFixed(2)} $`
-				: `Minimum transaction value is ${currentMethod.fixedFee + 0.01} $`;
+				: `Minimum transaction value is ${currentMethod.min + 0.01} $`;
 		}
 		return '';
 	}, [totalWithFee, currentMethod]);
