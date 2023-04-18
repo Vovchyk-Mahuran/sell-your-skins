@@ -25,9 +25,9 @@ export const usePaymentForm = (selected: string) => {
 
 	const totalPrice = useMemo(() => {
 		if (currentMethod) {
-			return totalWithFee > 0
+			return totalWithFee > currentMethod.min + 0.01
 				? `${totalWithFee.toFixed(2)} $`
-				: `Minimum transaction value is ${currentMethod.fixedFee + 0.01} $`;
+				: `Minimum transaction value is ${currentMethod.min + 0.01} $`;
 		}
 		return '';
 	}, [totalWithFee, currentMethod]);
@@ -42,8 +42,8 @@ export const usePaymentForm = (selected: string) => {
 	}, [currentMethod]);
 
 	const isButtonDisabled = useMemo(
-		() => !userTransactionValue || totalWithFee < 0 || !!urlError,
-		[userTransactionValue, totalWithFee, urlError]
+		() => !userTransactionValue || !currentMethod || totalWithFee < currentMethod.min + 0.01 || !!urlError,
+		[userTransactionValue, totalWithFee, urlError, currentMethod]
 	);
 
 	return { fee, totalPrice, amount, currentMethod, isButtonDisabled };
