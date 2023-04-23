@@ -1,25 +1,31 @@
 import { FC } from 'react';
 import { Field } from 'formik';
 
+// Types
+import { PaymentSystem } from 'core/types/payment-system.type';
+
+// Components
+import Input from 'shared/components/Input';
+
 interface PaymentInfoProps {
-	isCard: boolean;
+	selected: PaymentSystem;
 }
 
-const PaymentInfo: FC<PaymentInfoProps> = ({ isCard }) => {
+const PaymentInfo: FC<PaymentInfoProps> = ({ selected }) => {
 	return (
 		<div className="payment-methods__info">
-			<label htmlFor="email">Email:</label>
-			<Field autoComplete="off" className="input" name="email" placeholder="Enter your email" />
-			{!isCard ? (
-				<>
-					<label htmlFor="wallet">Wallet:</label>
-					<Field autoComplete="off" className="input" name="wallet" placeholder="Enter your wallet" />
-				</>
-			) : (
-				<p className="payment-methods__info--card">
-					After submitting this form you will be asked for enter your card data
-				</p>
-			)}
+			{selected.fields.map(field => (
+				<div key={field.name}>
+					<label htmlFor={field.name}>{field.label}:</label>
+					<Field
+						autoComplete="off"
+						type={field.type}
+						name={field.name}
+						placeholder={field.placeholder}
+						component={Input}
+					/>
+				</div>
+			))}
 		</div>
 	);
 };

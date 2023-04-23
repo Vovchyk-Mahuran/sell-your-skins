@@ -1,16 +1,19 @@
-import { FC, useCallback } from 'react';
-import { Formik, Form, FormikProps } from 'formik';
+import { FC, useMemo, useState } from 'react';
+import { Formik, Form } from 'formik';
 import { useAppDispatch } from 'redux/root';
+import * as yup from 'yup';
 
 // Constants
 import { CHECKOUT_SYSTEMS } from 'constants/checkoutMethods';
 
 // Enums
-import { PaymentMethod } from 'core/enums/payment-methods.enum';
 import { TradeModals } from 'core/enums/trade-modals';
 
 // Actions
 import { createTrade } from 'redux/user-service/actions';
+
+// Types
+import { PaymentSystem } from 'core/types/payment-system.type';
 
 // Hooks
 import { useTradeModals } from 'shared/hooks/useTradeModals';
@@ -19,82 +22,76 @@ import { useTradeModals } from 'shared/hooks/useTradeModals';
 import PaymentDetails from '../PaymentDetails';
 import PaymentMethodsList from '../PaymentMethodsList';
 import PaymentConfirmation from '../PaymentConfirmation';
+import PaymentInfo from '../PaymentInfo';
 
 // Styles
 import './index.scss';
 import './index.media.scss';
-import PaymentInfo from '../PaymentInfo';
 
 export interface CheckoutForm {
 	method: string;
-	email: string;
-	wallet?: string;
+	[name: string]: any;
 }
 
-const initFormik: CheckoutForm = {
-	method: CHECKOUT_SYSTEMS[0].title,
-	email: '',
-	wallet: '',
+const getInitaialValues = (selectedItem: PaymentSystem): CheckoutForm => {
+	return selectedItem.fields.reduce(
+		(acc: CheckoutForm, curr) => {
+			acc[curr.name] = curr.value || '';
+			return acc;
+		},
+		{ method: selectedItem.title }
+	);
+};
+
+const getValidationSchema = (selectedItem: PaymentSystem) => {
+	return yup.object().shape(
+		selectedItem.fields.reduce((acc: any, curr) => {
+			acc[curr.name] = curr.validation;
+			return acc;
+		}, {})
+	);
 };
 
 const PaymentForm: FC = () => {
 	const dispatch = useAppDispatch();
-	// const tradeInfo = useAppSelector(selectorGetTradeinfo);
-	// const tradeId = tradeInfo?.id;
-	// const [activeModal, setActiveModal] = useState<string>('');
 	const { currentModal, setActiveModal } = useTradeModals();
+	const [selectedMethod, setSelectedMethod] = useState<PaymentSystem>(CHECKOUT_SYSTEMS[0]);
 
-	// useEffect(() => {
-	// 	if (tradeInfo?.data?.message) {
-	// 		setActiveModal(TradeModals.ERROR);
-	// 	} else if (tradeInfo?.status === 'new') {
-	// 		setActiveModal(TradeModals.CONFIRM);
-	// 		localStorage.setItem(StorageKeys.TRADE_INFO, JSON.stringify(tradeInfo));
-	// 	}
-	// }, [tradeInfo]);
+	const initFormik = useMemo(() => {
+		return getInitaialValues(selectedMethod);
+	}, [selectedMethod]);
 
-	// const getActiveTradeStatus = async () => {
-	// 	dispatch(getActiveTrade(tradeId));
-	// };
-	// useEffect(() => {
-	// 	if (typeof tradeInfo?.status === 'string') {
-	// 		const startCounter = setInterval(() => {
-	// 			getActiveTradeStatus();
-	// 		}, 10000);
+	const validationSchema = useMemo(() => {
+		return getValidationSchema(selectedMethod);
+	}, [selectedMethod]);
 
-	// 		if (tradeInfo?.status !== 'new') {
-	// 			clearInterval(startCounter);
-	// 			setActiveModal(tradeInfo.status);
-	// 			localStorage.removeItem(StorageKeys.TRADE_INFO);
-	// 		}
-	// 	}
-	// }, [tradeInfo?.status, tradeId]);
+	const confirmTrade = (values: CheckoutForm) => {
+		const { method, ...fields } = values;
 
-	const isCardMethod = useCallback((formik: FormikProps<CheckoutForm>) => {
-		return formik.values.method === PaymentMethod.CARD;
-	}, []);
-
-	const confirmTrade = ({ method, email, wallet }: CheckoutForm) => {
+		const paymentFields = Object.entries(fields).map(([key, value]) => ({ name: key, value }));
 		const tradeDto = {
 			payment_method: method,
-			payment_fields: [{ name: 'email', value: email }],
+			payment_fields: paymentFields,
 		};
-		if (method !== PaymentMethod.CARD && wallet) {
-			tradeDto.payment_fields.push({ name: 'wallet', value: wallet });
-		}
 		dispatch(createTrade(tradeDto));
 		setActiveModal(TradeModals.PENDING);
 	};
 
 	return (
 		<div className="payment-methods">
-			<Formik initialValues={initFormik} onSubmit={confirmTrade}>
+			<Formik
+				enableReinitialize
+				initialValues={initFormik}
+				validateOnBlur
+				validationSchema={validationSchema}
+				onSubmit={confirmTrade}
+			>
 				{formik => (
 					<Form>
-						<PaymentMethodsList formik={formik} />
-						<PaymentInfo isCard={isCardMethod(formik)} />
+						<PaymentMethodsList setSelected={setSelectedMethod} />
+						<PaymentInfo selected={selectedMethod} />
 						<PaymentDetails selected={formik.values.method} />
-						<PaymentConfirmation selected={formik.values.method} />
+						<PaymentConfirmation isValid={formik.isValid} selected={formik.values.method} />
 					</Form>
 				)}
 			</Formik>

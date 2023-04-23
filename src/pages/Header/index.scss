@@ -12,6 +12,17 @@
     &__content {
         @include flex(space-between);
         height: 100%;
+
+        .header__logo {
+            img {
+                max-width: 186px;
+                margin-left: -13px;
+            }
+
+            &--auth img {
+                margin-left: 0;
+            }
+        }
     }
 
     &__nav {

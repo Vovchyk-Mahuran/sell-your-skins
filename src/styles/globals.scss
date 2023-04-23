@@ -19,6 +19,17 @@ a {
         outline: none;
         text-decoration: none;
     }
+
+    &.marked {
+        color: $orange;
+        font-weight: 500;
+
+        &:focus, &:active, &:visited, &:hover {
+        color: $orange;
+        outline: none;
+        text-decoration: none;
+    }
+    }
 }
 
 .App {

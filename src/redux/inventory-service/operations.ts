@@ -10,7 +10,7 @@ export const lastSoldOperation = (state: InventoryReducer, { payload }: PayloadA
 };
 
 export const getInventoryOperation = (state: InventoryReducer, { payload }: PayloadAction<inventoryResponseDTO>) => {
-	return { ...state, inventory: payload.items.sort((a, b) => b.price - a.price), transactionValue: payload.selected };
+	return { ...state, inventory: payload.items, transactionValue: payload.selected };
 };
 
 export const selectInventoryOperation = (

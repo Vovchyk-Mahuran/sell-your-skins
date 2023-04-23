@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { FOOTER_LINKS } from 'constants/footerLinks';
 
 // Images
-import Logo from 'assets/icons/logo.svg';
+import Logo from 'assets/img/logo.png';
 
 // Components
 import FooterColumn from './components/FooterColumn';

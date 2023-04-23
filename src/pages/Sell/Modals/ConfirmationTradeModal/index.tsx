@@ -30,7 +30,7 @@ const ConfirmationTradeModal: FC<ConfirmationTradeModalProps> = ({ isOpen }) => 
 	const tradeInfo = useAppSelector(state => state.userStore.tradeInfo);
 
 	const getTradeStatus = () => {
-		dispatch(getActiveTrade(tradeInfo?.steam_trade_id));
+		dispatch(getActiveTrade(tradeInfo?.id));
 	};
 
 	return (

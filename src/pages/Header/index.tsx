@@ -7,7 +7,7 @@ import cx from 'classnames';
 import { ROUTERS } from 'constants/routers';
 
 // Images
-import Logo from 'assets/icons/logo.svg';
+import Logo from 'assets/img/logo.png';
 
 // Selectors
 import { selectorIsAuth } from 'redux/user-service/selector';
@@ -33,7 +33,10 @@ const Header: FC = () => {
 		<div className="header">
 			<div className={cx('container', { 'container-xl': isAuth })}>
 				<div className="header__content">
-					<Link className="header__logo" to={isAuth ? ROUTERS.SELL : ROUTERS.HOME}>
+					<Link
+						className={cx('header__logo', { 'header__logo--auth': isAuth })}
+						to={isAuth ? ROUTERS.SELL : ROUTERS.HOME}
+					>
 						<img src={Logo} alt="SELL YOUR SKINS" />
 					</Link>
 					<nav className="header__nav">{isAuth ? <AuthNavigation /> : <DefaultNavigation />}</nav>
