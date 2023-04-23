@@ -42,7 +42,7 @@ export const CHECKOUT_SYSTEMS: PaymentSystem[] = [
 	{
 		src: TetherERC20,
 		title: PaymentMethod.TETHER_ERC20,
-		min: 3,
+		min: 5,
 		processingTime: 'Instant',
 		fee: 0,
 		fixedFee: 1,
@@ -66,7 +66,7 @@ export const CHECKOUT_SYSTEMS: PaymentSystem[] = [
 	{
 		src: TetherTRC20,
 		title: PaymentMethod.TETHER_TRC20,
-		min: 3,
+		min: 5,
 		processingTime: 'Instant',
 		fee: 0,
 		fixedFee: 0.2,
@@ -90,7 +90,7 @@ export const CHECKOUT_SYSTEMS: PaymentSystem[] = [
 	{
 		src: Ethereum,
 		title: PaymentMethod.ETHEREUM,
-		min: 5,
+		min: 10,
 		processingTime: 'Instant',
 		fee: 0,
 		fixedFee: 1,
@@ -114,7 +114,7 @@ export const CHECKOUT_SYSTEMS: PaymentSystem[] = [
 	{
 		src: Card,
 		title: PaymentMethod.CARD,
-		min: 10,
+		min: 20,
 		processingTime: 'Instant',
 		fee: 3,
 		fixedFee: 0.5,
