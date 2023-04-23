@@ -43,3 +43,10 @@ export const clearTradeOperation = (state: IUserReducer) => {
 	localStorage.removeItem(StorageKeys.TRADE_INFO);
 	return { ...state, tradeInfo: null };
 };
+
+export const updateTradeUrlErrorOperation = (
+	state: IUserReducer,
+	{ payload = '' }: PayloadAction<string | undefined>
+) => {
+	return { ...state, tradeUrlError: payload };
+};

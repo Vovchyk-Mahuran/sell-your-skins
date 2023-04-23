@@ -1,6 +1,3 @@
-// Types
-import { PaymentSystem } from 'core/types/payment-system.type';
-
 // Images
 import PayPal from 'assets/icons/paypal.svg';
 import BankTransfer from 'assets/icons/bank.svg';
@@ -12,7 +9,7 @@ import WebMoney from 'assets/icons/webmoney.svg';
 import Bitcoin from 'assets/icons/bitcoin.svg';
 import Tether from 'assets/icons/tether.svg';
 
-export const PAYMENT_SYSTEMS: PaymentSystem[] = [
+export const PAYMENT_SYSTEMS = [
 	{ src: PayPal, title: 'PayPal', min: 20, processingTime: '0-15 min', fee: 2.9, fixedFee: 0 },
 	{ src: BankTransfer, title: 'Bank Transfer', min: 20, processingTime: '0-24 hours', fee: 2.5, fixedFee: 0 },
 	{ src: Skrill, title: 'Skrill', min: 50, processingTime: '0-30 min', fee: 2.9, fixedFee: 0 },

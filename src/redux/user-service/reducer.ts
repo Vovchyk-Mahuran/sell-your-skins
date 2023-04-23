@@ -20,6 +20,7 @@ import {
 	createTradeOperation,
 	getActiveTradeOperation,
 	clearTradeOperation,
+	updateTradeUrlErrorOperation,
 } from './operations';
 
 const initialUser = {
@@ -46,6 +47,7 @@ export const userStore = createSlice({
 		logout: logoutOperation,
 		clearTrade: clearTradeOperation,
 		signIn: signInOperation,
+		updateTradeUrlError: updateTradeUrlErrorOperation,
 	},
 	extraReducers: builder => {
 		builder
@@ -57,5 +59,5 @@ export const userStore = createSlice({
 	},
 });
 
-export const { logout, clearTrade, signIn } = userStore.actions;
+export const { logout, clearTrade, signIn, updateTradeUrlError } = userStore.actions;
 export default userStore.reducer;

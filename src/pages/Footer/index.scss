@@ -13,7 +13,7 @@
 
     &__description {
         width: 70%;
-        padding: 35px 0;
+        padding: 15px 0 25px 0;
         font-size: 16px;
     }
 
@@ -47,8 +47,9 @@
     }
 
     &__logo {
-        height: 24px;
-        width: min-content;
+        margin-left: -13px;
+        margin-top: -20px;
+        max-width: 186px;
     }
 
 

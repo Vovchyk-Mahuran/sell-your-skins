@@ -1,0 +1,24 @@
+@use '/src/styles/mixins/classes.scss' as *;
+
+.about-us {
+
+    &__info {
+        font-size: 18px;
+        line-height: 130%;
+        margin-bottom: 25px;
+    }
+
+    &__details {
+        font-size: 18px;
+        line-height: 130%;
+        margin-bottom: 25px;
+    }
+
+  
+    &__title{
+        font-size: 27px;
+        line-height: 130%;
+        margin-bottom:25px;
+        margin-top: 40px;
+    }
+}

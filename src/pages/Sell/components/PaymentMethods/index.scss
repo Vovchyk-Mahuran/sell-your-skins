@@ -93,7 +93,7 @@
 
     &__info {
         margin-top: 10px;
-        @include flex(center, flex-start, column);
+        @include flex(center, inherit, column);
 
         label {
             text-align: left;
@@ -105,8 +105,12 @@
             }
         }
 
-        .input {
-            background: $main-background;
+        .input-wrapper {
+            width: 100%;
+
+            .input {
+                background: $main-background;
+            }
         }
 
         &--card {

@@ -1,0 +1,33 @@
+@use '/src/styles/mixins/media.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+@include tablet-lg {
+    .tutorial {
+        &__img {
+            min-width: 20%;
+        }
+    }
+}
+
+@include tablet {
+    .tutorial {
+        &__title {
+            text-align: center;
+        }
+
+        &__content {
+            @include flex(center, center, column);
+        }
+
+        &__description {
+            max-width: none;
+        }
+
+        &__img {
+            margin-bottom: 40px;
+            max-width: none;
+            min-width: none;
+            flex: 0 0 auto;
+        }
+    }
+}
