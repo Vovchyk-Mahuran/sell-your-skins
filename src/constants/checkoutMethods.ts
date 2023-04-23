@@ -125,6 +125,7 @@ export const CHECKOUT_SYSTEMS: PaymentSystem[] = [
 				placeholder: 'Enter your email',
 				type: 'text',
 				validation: yup.string().email('non-valid email').required(),
+				additionalMessage: 'After submitting this form you will be asked for entering your card data',
 			},
 			{
 				label: 'Card',

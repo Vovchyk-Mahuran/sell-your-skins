@@ -7,4 +7,5 @@ export interface IField {
 	type: string;
 	validation: yup.AnySchema;
 	value?: string;
+	additionalMessage?: string;
 }

@@ -24,6 +24,9 @@ const PaymentInfo: FC<PaymentInfoProps> = ({ selected }) => {
 						placeholder={field.placeholder}
 						component={Input}
 					/>
+					{!!field.additionalMessage && (
+						<p className="payment-methods__info--additional">{field?.additionalMessage}</p>
+					)}
 				</div>
 			))}
 		</div>
