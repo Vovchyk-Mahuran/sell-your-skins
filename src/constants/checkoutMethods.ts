@@ -10,7 +10,7 @@ import { PaymentSystem } from 'core/types/payment-system.type';
 import Card from 'assets/icons/card.svg';
 import PayPal from 'assets/icons/paypal.svg';
 import Bitcoin from 'assets/icons/skrill.svg';
-//import Bitcoin from 'assets/icons/bitcoin.svg';
+// import Bitcoin from 'assets/icons/bitcoin.svg';
 import TetherTRC20 from 'assets/icons/yoomoney.svg';
 // import TetherTRC20 from 'assets/icons/tether-trc.svg';
 import TetherERC20 from 'assets/icons/webmoney.svg';
