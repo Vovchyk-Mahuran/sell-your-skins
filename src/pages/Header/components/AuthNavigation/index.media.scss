@@ -1,0 +1,15 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet {
+    .auth-header {
+        display: none;
+    }
+}
+
+@include tablet-sm {
+    .auth-header {
+        .header-user {
+            margin-left: 15px;
+        }
+    }
+}

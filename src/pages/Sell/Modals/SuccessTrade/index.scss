@@ -1,0 +1,23 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.success-trade {
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    &__content {
+        @include flex(center, center, column);
+        gap: 15px;
+    }
+
+    &__image {
+        width: 90px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+}

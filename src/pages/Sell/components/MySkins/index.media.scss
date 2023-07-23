@@ -1,0 +1,15 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include laptop-sm {
+    .my-skins {
+        flex-direction: column;
+
+        .equipment {
+            width: 100%;
+        }
+
+        .payment-methods {
+            width: 100%;
+        }
+    }
+}

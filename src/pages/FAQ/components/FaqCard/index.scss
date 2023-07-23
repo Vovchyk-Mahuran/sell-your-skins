@@ -1,0 +1,51 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.faq-card {
+    padding: 32px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    width: 33%;
+    border: 1px solid $dark-border;
+    background-color: $skin-background;
+
+    &__header {
+        @include flex(flex-start);
+        gap: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $dark-border;
+    }
+
+    .circle-icon {
+        @include flex;
+        border: 1px solid $orange;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        flex-shrink: 0;
+
+        svg {
+            fill: $orange;
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    &__content {
+        padding-top: 15px;
+    }
+
+    &__popular {
+        text-transform: uppercase;
+        color: $gray-text;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 12px;
+    }
+}

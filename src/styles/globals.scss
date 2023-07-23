@@ -1,0 +1,120 @@
+@use './variables.scss' as *;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    line-height: 1.5;
+    font-family: inter, sans-serif;
+    color: $white
+}
+
+a {
+    color: $white;
+
+    &:focus, &:active, &:visited, &:hover {
+        color: $white;
+        outline: none;
+        text-decoration: none;
+    }
+
+    &.marked {
+        color: $orange;
+        font-weight: 500;
+
+        &:focus, &:active, &:visited, &:hover {
+        color: $orange;
+        outline: none;
+        text-decoration: none;
+    }
+    }
+}
+
+.App {
+    background-color: $main-background;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-xl {
+    width: 100%;
+    max-width: 100%;
+    padding:0 40px;    
+}
+
+.container-xxl {
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.marked {
+    color: $orange
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.text-underlined {
+    text-decoration: underline;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.pink {
+    color: $pink;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.blue {
+    color: $blue;
+}
+
+.purple {
+   color: $purple;
+}
+
+.red {
+    color: $red;
+}
+
+.default {
+    color: $default;
+}
+
+.show {
+    opacity: 1;
+}
+
+.react-tooltip {
+    z-index: 300;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

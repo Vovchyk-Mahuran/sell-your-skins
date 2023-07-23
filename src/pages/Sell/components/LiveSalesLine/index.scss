@@ -1,0 +1,17 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.live-sales {
+    &-line {
+        padding-left: 15px;
+        margin-bottom: 55px;
+        height: 90px;
+        border-bottom: 1px solid $dark-border;
+        @include flex(flex-start);
+    }
+
+    &-cards {
+        @include flex(flex-start);
+        overflow-x: clip;
+    }
+}

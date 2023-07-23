@@ -1,0 +1,21 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include tablet-lg {
+    .manual {
+        padding-top: 85px;
+
+        &__title {
+            padding: 0 20px;
+        }
+    }
+}
+
+@include mobile-xl {
+    .manual {
+        padding-top: 50px;
+
+        &__title {
+            margin-bottom: 35px;
+        }
+    }
+}

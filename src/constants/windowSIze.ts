@@ -1,0 +1,9 @@
+export const LAPTOP = 1300;
+export const LAPTOP_SM = 1028;
+export const TABLET_LG = 859;
+export const TABLET = 768;
+export const TABLET_SM = 688;
+export const MOBILE_LG = 425;
+export const MOBILE_MD = 375;
+export const MOBILE_SM = 349;
+export const MOBILE_XS = 320;

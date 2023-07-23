@@ -1,0 +1,65 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.header {
+    height: 81px;
+    border-bottom: 1px solid $dark-border;
+    
+    .container {
+        height: 100%;
+    }
+    
+    &__content {
+        @include flex(space-between);
+        height: 100%;
+
+        .header__logo {
+            img {
+                max-width: 186px;
+                margin-left: -13px;
+            }
+
+            &--auth img {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        height: 100%;
+
+        &--mobile {
+            display: none;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__button.button {
+        height: 55px;
+        position: relative;
+        padding-left: 66px;
+
+        &::before {
+            content: url('~assets/icons/steam.svg');
+            width: 24px;
+            left: 36px;
+            top: 16px;
+            position: absolute;
+        }
+
+        &--desktop {
+            display: flex;
+            align-items: center;
+        }
+
+        &--mobile {
+            display: none;
+        }
+    }
+}

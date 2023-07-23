@@ -1,0 +1,112 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.step {
+    @include flex;
+    min-height: 800px;
+
+    .container {
+        @include flex(space-between);
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__info {
+        padding: 40px;
+    }
+
+    &__number {
+        display: block;
+        margin-bottom: 20px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            top: 12px;
+            left: 25px;
+            background: $orange;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: 28px;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+
+    &__description {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: $gray-text;
+        font-weight: 500;
+    }
+
+    .step-list {
+        list-style-type: none;
+        margin-bottom: 25px;
+
+        &__item {
+            @include flex(flex-start);
+            gap: 15px;
+            padding: 12px 0;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &__img {
+        max-width: 50%;
+
+        img  {
+            width: 100%;
+        }
+    }
+
+    &.step--1 {
+        min-height: 0;
+        padding-bottom: 135px;
+
+        .step__description {
+            max-width: 400px;
+        }
+    }
+
+    &.step--2 {
+        background: url('~assets/img/bg-step-2.webp') top center / cover no-repeat $main-background;
+
+        .step__img img {
+            width: 636px;
+        }
+
+        .step__info {
+            margin-left: 20px;
+        }
+    }
+
+    &.step--3 {
+        background-color: $main-background;
+
+        .step__description {
+            max-width: 560px;
+        }
+    }
+
+    &.step--4 {
+        .step__img img {
+            width: 636px;
+        }
+        
+        .step__info {
+            margin-left: 20px;
+        }
+    }
+}

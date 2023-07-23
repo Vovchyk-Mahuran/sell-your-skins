@@ -1,0 +1,129 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/animations.scss' as *;
+@use '/src/styles/mixins/classes.scss' as *;
+
+.skin {
+    height: 238px;
+    width: 173px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 250ms linear;
+    padding: 21px 12px;
+    border-radius: 4px;
+    background-color: $skin-background;
+    border: 0;
+    @include colored-box($default);
+
+    &__header {
+        @include flex(space-between, flex-start);
+        font-size: 14px;
+    }
+
+    &__price {
+        display: flex;
+        gap: 5px;
+
+        span {
+            font-weight: 600;
+            color: $yellow;
+        }
+    }
+
+    &__quality {
+        color: $gray-transparent;
+        font-weight: 500;
+    }
+
+    &__img {
+        width: 100%;
+        height: 95px;
+        margin-bottom: 5px;
+        @include flex;
+        position: relative;
+
+        img {
+            height: 100%;
+            transition: transform 300ms ease-in-out;
+        }
+    }
+
+    &__footer {
+        padding-top: 10px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    &__overlay {
+        @include flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 4px;
+        z-index: 3;
+
+        &--selected {
+            box-shadow: 0 3px 0 0 $light-green;
+            background: $selected-gradient; 
+        }
+
+        &--blocked {
+            box-shadow: 0 3px 0 0 $red;
+            background: $blocked-gradient;
+
+        }
+    }
+
+    &--blocked {
+        &:hover {
+            animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+            background-image: $blocked-hover-gradient !important;
+            
+            .skin__overlay--blocked {
+                box-shadow: 0 3px 0 0 $error;
+            }
+        }
+    }
+
+    &--pink {
+        @include colored-box($pink);
+    }
+
+    &--yellow {
+        @include colored-box($yellow);
+    }
+    
+    &--blue {
+        @include colored-box($blue);
+    }
+
+    &--purple {
+        @include colored-box($purple);
+    }
+
+    &--red {
+        @include colored-box($red);
+    }
+
+    &--default {
+        @include colored-box($default)
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        @include colored-box($light-green);
+
+        .skin__img img{
+            transform: scale(1.1);
+        }
+    }
+
+    &__blur--blocked {
+        filter: blur(1.5px) grayscale(95%)
+    }
+}

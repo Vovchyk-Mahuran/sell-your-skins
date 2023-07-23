@@ -1,0 +1,62 @@
+@use '/src/styles/variables.scss' as *;
+
+.accordion {
+    &__header {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       position: relative;
+    }
+    
+    &__arrow {
+        position: absolute;
+        top: 36%;
+        right: 6%;
+        border: 0;
+        background: transparent;
+        transition: transform .3s ease-in-out;
+        width: 24px;
+        height: 24px;
+
+        &.collapsed {
+            transform: rotateX(180deg);
+        }
+    }
+
+    &__button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 16px;
+        text-align: left;
+        border: 1px solid $dark-border;
+        border-radius: 0;
+        background-color: $skin-background;
+        overflow-anchor: none;
+        margin-bottom: 15px;
+        line-height: 40px;
+        cursor: pointer;
+
+        svg {
+            fill: $white;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+    }
+    
+    &__body {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        
+        &.collapsed {
+            height: auto;
+            padding: 16px 20px;
+            max-height: 1000px;
+        }
+    }
+}

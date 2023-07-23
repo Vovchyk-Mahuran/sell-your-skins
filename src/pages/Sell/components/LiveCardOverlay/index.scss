@@ -1,0 +1,19 @@
+@use '/src/styles/mixins/classes.scss' as *;
+@use '/src/styles/variables.scss' as *;
+
+.overlay-player {
+    @include flex(center, center, column);
+    transform: translateY(-100px);
+    width: 100%;
+    height: 90px;
+    position: relative;
+    transition: all 450ms ease-in-out;
+
+    &__name {
+        font-size: 13px;
+        margin-top: 2px;
+        font-weight: 600;
+        @include text-ellipsis;
+        max-width: 100px;
+    }
+}

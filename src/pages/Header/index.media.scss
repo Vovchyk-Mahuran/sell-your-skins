@@ -1,0 +1,85 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include laptop-md {
+    .header {
+        .container-xl {
+            max-width: 100%;
+            padding: 0 12px;
+        }
+    }
+}
+
+@include tablet-lg {
+    .header {
+        .button--desktop {
+            display: none;
+        }
+
+        .button--mobile {
+            display: flex;
+            align-items: center;
+        }
+
+        &__button {
+            height: 48px;
+
+            &::before {
+                top: 18px;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .header {
+        height: 100%;
+        .container-xl {
+            min-height: 81px;
+        }
+
+        &__content {
+            min-height: 81px;
+        }
+    
+        &__nav{
+            display: none;
+
+            &--mobile {
+                display: flex;
+            }
+        }
+
+        .auth-burger {
+            display: block;
+        }
+    }
+}
+
+@include tablet-sm {
+    .header {
+        &__button {
+            font-size: 12px;
+            padding-left: 40px;
+            padding-right: 21px;
+
+            &::before {
+                scale: 1.2;
+                left: 10px;
+                top: 17px;
+                left: 13px;
+            }
+        }     
+    }
+}
+
+@include mobile-sm {
+    .header {
+        &__logo {
+            max-width: 60%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

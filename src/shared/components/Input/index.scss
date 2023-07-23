@@ -1,0 +1,51 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/animations.scss' as *;
+
+.input {
+    display: block;
+    width: 100%;
+    background-color: $skin-background;
+    border-radius: 4px;
+    border: 1px solid $dark-border;
+    padding: 14px 15px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $orange;
+    position: relative;
+
+    &:focus {
+        border: 1px solid $orange;
+    }
+
+    &::placeholder {
+        color: $gray-text;
+    }
+
+    &__error {
+        color: $error;
+        text-align: right;
+        display: block;
+        margin-top: 2px;
+        opacity: 0;
+        height: 12px;
+        font-size: 14px;
+    }
+
+    &__error-icon {
+        position: absolute;
+        opacity: 0;
+        top: 20%;
+        right: 2%;
+    }
+
+    &.invalid {
+        border: 1px solid $error;
+        color: $error;
+        animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+    }
+}
+
+.input-wrapper {
+    position: relative;
+}

@@ -1,0 +1,26 @@
+@use '/src/styles/variables.scss' as *;
+
+.spinner {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        border-top-color: $black;
+        animation: spinner .6s linear infinite;
+    }
+
+}
+@keyframes spinner{
+  to {
+      transform: rotate(360deg)
+  }
+}

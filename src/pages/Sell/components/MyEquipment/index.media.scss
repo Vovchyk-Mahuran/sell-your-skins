@@ -1,0 +1,30 @@
+@use '/src/styles/mixins/media.scss' as *;
+
+@include laptop-sm {
+    .equipment {
+        &__loader {
+            .spinner {
+                width: 60px;
+                height: 60px;
+                margin-top: 25px;
+    
+                &::before {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .equipment__pagination {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+
+        .pagination__buttons {
+            flex-wrap: wrap;
+        }
+    }
+}

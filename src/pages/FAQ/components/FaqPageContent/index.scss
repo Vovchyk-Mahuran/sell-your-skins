@@ -1,0 +1,28 @@
+@use '/src/styles/variables.scss' as *;
+
+.faq-page {
+    &__info {
+        margin: 48px 0;
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    &__description {
+        font-size: 16px;
+        font-weight: 500;
+        color: $gray-text;
+    }
+
+    &__cards {
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        margin-bottom: 25px;
+    }
+}

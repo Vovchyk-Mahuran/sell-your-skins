@@ -1,16 +1,27 @@
-import React from 'react';
+// Libs
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import store from 'redux/root';
+
+// Components
+import ScrollToTop from 'shared/components/ScrollToTop';
 import App from './App';
+
+// Web Vitals
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+// Styles
+import './index.scss';
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<Provider store={store}>
+		<BrowserRouter>
+			<ScrollToTop />
+			<App />
+		</BrowserRouter>
+	</Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
